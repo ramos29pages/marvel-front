@@ -1,0 +1,29 @@
+
+
+section{
+    background-color: royalblue;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "nav nav""menu content";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr;
+}
+
+.nav{
+    grid-area: nav;
+    background-color: rgb(232, 232, 232);
+    box-shadow: 0px 2px 5px rgba(40, 40, 40, 0.4);
+    z-index: 1;
+}
+
+.menu{
+    background-color: rgb(232, 232, 232);
+    grid-area: menu;
+}
+
+.content{
+    // background-color: rgb(241, 241, 241);
+    background: #fff;
+    grid-area: content;
+}
