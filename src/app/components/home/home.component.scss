@@ -1,3 +1,44 @@
-p{
-    background-color: coral;
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "search actives"
+                         "search calendar"
+                         "footer footer";
+    grid-template-rows: 32vh 1fr 10vh;
+    grid-template-columns: 1fr 25vw;
+    // background-color:  rgb(144, 79, 79);
+
+    .search-company{
+        // background-color: coral;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        display: grid;
+        grid-area: search;
+        padding: 0px 20px;
+    }
+
+    .active-users{
+        // background: chartreuse;
+        display: grid;
+        place-items: center;
+        grid-area: actives;
+        height: 100%;
+        width: 100%;
+    }
+
+    .calendar{
+        // background-color: chocolate;
+        display: grid;
+        place-items: center;
+        grid-area: calendar;
+        height: 100%;
+        width: 100%;
+    }
+
+    .app-footer{
+        grid-area: footer;
+    }
 }

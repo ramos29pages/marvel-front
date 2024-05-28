@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { CapitalizePipe } from '../../shared/pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-menu-button',
   standalone: true,
-  imports: [RouterLink, CapitalizePipe],
+  imports: [RouterLink, CapitalizePipe, RouterLinkActive, RouterModule],
   templateUrl: './menu-button.component.html',
   styleUrl: './menu-button.component.scss'
 })

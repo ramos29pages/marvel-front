@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  protected username : string = '@username';
+  protected imageProfileURL: string = 'https://robohash.org/ramos';
+  protected logoURL: string = '../../';
+
 }

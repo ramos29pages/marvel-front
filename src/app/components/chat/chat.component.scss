@@ -1,0 +1,36 @@
+$greenApp: #90c129;
+$blueApp: #7aa5f9;
+$navColor: #f0f2f9;
+
+.cont-data-chat{
+    background-color: $navColor;
+    // box-shadow: 0px 0px 10px 1psx rgba(0, 0, 0, 0.25);
+    width: 100%;
+    min-height: 410px;
+    max-height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    display: grid;
+
+
+
+    .head{
+        background-color: #7aa5f9;
+        display: flex;
+        padding: 0px 20px;
+        justify-content: space-between;
+    }
+
+    .messages{  
+        background-color: royalblue;
+    }
+
+    .footer{
+        background-color: coral;
+        display: flex;
+        padding: 0px 20px;
+        justify-content: space-between;
+    }
+}

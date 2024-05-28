@@ -1,0 +1,25 @@
+<section>
+    <div class="cont-calendar">
+        <div class="calendar">
+            <h2>{{ month }} {{ year }}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>S</th>
+                  <th>M</th>
+                  <th>T</th>
+                  <th>W</th>
+                  <th>T</th>
+                  <th>F</th>
+                  <th>S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let week of weeks">
+                  <td *ngFor="let day of week">{{ day }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+</section>

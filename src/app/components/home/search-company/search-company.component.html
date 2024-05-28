@@ -1,0 +1,111 @@
+<section class="container">
+
+    <div class="cont-title">
+        <p>Search Company</p>
+    </div>
+
+    <form class="form-cont-filters">
+        <div class="cont-input-filters">
+            <div class="filters">
+                <div class="filter">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Keywords">
+                </div>
+
+                <div class="filter">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <select #countrySelect class="btn-filter">
+                      <option value="default">Country</option>
+                      <option value="co">Colombia</option>
+                      <option value="us">United States</option>
+                      <option value="ca">Canada</option>
+                      <option value="mx">Mexico</option>
+                    </select>
+                  </div>
+
+                  <div class="filter">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <select class="btn-filter" id="country-select">
+                      <option value="default">Country</option>
+                      <option value="co">Colombia</option>
+                      <option value="us">United States</option>
+                      <option value="ca">Canada</option>
+                      <option value="mx">Mexico</option>
+                    </select>
+                  </div>
+                  
+                
+            </div>
+            <div class="action-filters">
+                <button>SEARCH</button>
+                <button>Clear all</button>
+            </div>
+        </div>
+
+        <div class="cont-sort-section">
+            <section class="sort-section">
+                <div class="cont-button-sort">
+                    <button class="sortby">
+                        <p>Sort by<i class="fa-solid fa-chevron-down"></i></p>
+                    </button>
+                </div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>User info</th>
+                        <th>Country</th>
+                        <th>Categories if interest</th>
+                        <th></th>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </form>
+
+    <div class="users">
+
+        <div class="cont-table">
+            <table>
+                <tr>
+                    <td class="cont-profile">
+                        <div class="cont-img-profile">
+                            <div class="cont">
+                                <img src="https://robohash.org/rosa" alt="profile">
+                            </div>
+                        </div>
+                    </td>
+
+                    <td class="info-profile">
+                        <p class="username">Daniel Ramos</p>
+                        <p class="company-name">Company name</p>
+                        <p class="work-position">Work position</p>
+                    </td>
+                    <td class="country">
+                        <img src="https://flagcdn.com/16x12/ar.png" srcset="https://flagcdn.com/32x24/ar.png 2x,
+    https://flagcdn.com/48x36/ar.png 3x" width="16" height="12" alt="Argentina">
+                    </td>
+                    <td class="categories">
+                        <div class="cont-icon-categories">
+                            <img src="../../../assets/icons/categories/plastic.png" alt="">
+                            <img src="../../../assets/icons/categories/ferrous-metals.png" alt="">
+                            <img src="../../../assets/icons/categories/non-ferrous-metals.png" alt="">
+                            <img src="../../../assets/icons/categories/plastic.png" alt="">
+                            <img src="../../../assets/icons/categories/plastic.png" alt="">
+                            <img src="../../../assets/icons/categories/paper.png" alt="">
+                            <img src="../../../assets/icons/categories/plastic.png" alt="">
+                            <img src="../../../assets/icons/categories/stainless-steel.png" alt="">
+                            <img src="../../../assets/icons/categories/plastic.png" alt="">
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <div class="cont-actions">
+                            <button class="btn-chat">Chat Now</button>
+                            <button class="btn-view">View Profile</button>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</section>
