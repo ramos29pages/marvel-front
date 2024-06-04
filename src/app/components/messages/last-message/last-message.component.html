@@ -1,0 +1,14 @@
+<div class="chat" (click)="selectConversation(ms.user.name)">
+    <p class="lastHour">{{ ms.lastHour }}</p>
+    <div class="user-chat">
+        <div class="cont-profile">
+            <img [src]="ms.imgURL" alt="profile image">
+        </div>
+        <div class="info-user-message">
+            <div class="info">
+                <p class="username-chat">{{ ms.user.name }}</p>
+                <p class="lastMessage">{{ ms.lastMessage }}</p>
+            </div>
+        </div>
+    </div>
+</div>

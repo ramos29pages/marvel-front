@@ -1,1 +1,67 @@
-<p>account works!</p>
+<div class="container">
+    <div class="content">
+        <section class="user-profile">
+            <div class="cover"></div>
+            <div class="info">
+                <article class="categories">
+                    <!-- absolute -->
+                    <div class="profile-picture">
+                        <img src="{{profileURL}}" alt="profile image">
+                    </div>
+                    <div class="edit-profile-picture">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+                    <!-- relative -->
+                    <div class="info-user">
+                        <div class="title">
+                            <h1>{{name}}</h1>
+                            <p>categories <i class="fa-solid fa-chevron-down"></i></p>
+                        </div>
+                        <div class="info-about">
+                            <div class="info-wcc">
+                                <p>{{company}}</p>
+                                <p>{{workPosition}}</p>
+                                <p> <img src="https://flagcdn.com/16x12/{{countryFlag}}.png" srcset="https://flagcdn.com/32x24/{{countryFlag}}.png 2x,
+                                    https://flagcdn.com/48x36/{{countryFlag}}.png 3x" width="16" height="12" alt="Bandera-{{countryFlag}}"></p>
+                            </div>
+                            <div class="icons-categories">
+                                <div class="cont-icon-categories">
+                                    @for(ctg of categories; track ctg){
+                                        <img src="../../../assets/icons/categories/{{ctg}}.png" alt="">
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="about">
+                    <div class="about-title">
+                        <p>About Me</p>
+                        <p title="Edit about profile"><i class="fa-solid fa-pen"></i></p>
+                    </div>
+                    <p>{{aboutInfo}}</p>
+                </article>
+                <article class="contact">
+                    <div class="mobile">
+                        <h4>Mobile</h4>
+                        <p>300000000</p>
+                    </div>
+                    <div class="email">
+                        <h4>Email</h4>
+                        <p>{{email}}</p>
+                    </div>
+                    <div class="website">
+                        <h4>Website</h4>
+                        <p>{{website}}</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="scheduler">
+            <div class="quotes">
+                {{ahora}}
+            </div>
+        </section>
+    </div>
+    <app-footer></app-footer>
+</div>
