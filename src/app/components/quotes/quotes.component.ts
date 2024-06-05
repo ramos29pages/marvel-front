@@ -55,6 +55,16 @@ export class QuotesComponent implements OnInit {
         status: 'on-hold',
         reservedBy: 1,
         reservedWith: 2
+      },
+      {
+        membership: 'DINAMYC',
+        startTime: "8:40AM",
+        startTimeValue: 840,
+        endTime: "8:55AM",
+        endTimeValue: 855,
+        status: 'reserved',
+        reservedBy: 1,
+        reservedWith: 2
       }
     ]
 

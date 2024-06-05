@@ -1,1 +1,27 @@
-<p>profile-messages works!</p>
+<article class="profile">
+    <div class="cont-data-profile">
+        <div class="cover">
+            <div class="cont-img-profile">
+                <img src="https://robohash.org/{{name}}" alt="image">
+            </div>
+            <div class="overlay"></div>
+            <div class="data">
+                <p class="name">{{name}}</p>
+                <p class="company">{{company}}</p>
+                <p class="name">{{workPosition}}</p>
+                <p class="company">
+                    <img src="https://flagcdn.com/16x12/{{countryFlag}}.png" srcset="https://flagcdn.com/32x24/{{countryFlag}}.png 2x,
+                         https://flagcdn.com/48x36/{{countryFlag}}.png 3x" width="30" height="20" alt="country">
+                </p>
+            </div>
+        </div>
+        <div class="categories">
+            <p>Categories of Interest</p>
+            <div class="cont-icon-categories">
+                @for(ctg of categories; track ctg){
+                    <img src="../../../../assets/icons/categories/{{ctg}}.png" alt="{{ctg}}">
+                }
+            </div>
+        </div>
+    </div>
+</article>

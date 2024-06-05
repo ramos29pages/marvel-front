@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 }@else if(onlyReserved === false){
-                    <div [ngClass]="{ 'reserved': slot.status === 'reserved', 'on-hold': slot.status === 'on-hold'}">
+                    <div [ngClass]="{ 'reserved': slot.status === 'reserved', 'on-hold': slot.status === 'on-hold', 'available': slot.status === 'available' }">
                         <div>{{slot.startTime}} - {{slot.endTime}}</div>
                         <div class="rmsdv">
                             <div [ngClass]="{'no-show': slot.status === 'reserved'}">

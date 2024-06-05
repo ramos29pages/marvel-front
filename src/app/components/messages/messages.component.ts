@@ -3,7 +3,7 @@ import { ChatComponent } from './chat/chat.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 import { Router } from '@angular/router';
-import {UserMessage, User} from './UserMessage';
+import {UserMessage, User} from '../../types/LastMessage';
 import { CommonModule } from '@angular/common';
 import { LastMessageComponent } from './last-message/last-message.component';
 
@@ -17,8 +17,8 @@ import { LastMessageComponent } from './last-message/last-message.component';
 
 export class MessagesComponent {
 
-  company: string = 'MISSION RECICLYNG';
-  sloganToChatSection: string = 'MISSION RECICLYNG';
+  company: string = 'Mission Recycling APP';
+  sloganToChatSection: string = 'Send and receive messages to all users.';
   title : string = 'Chat';
 
   user1: User = {
@@ -52,9 +52,4 @@ export class MessagesComponent {
   }];
 
   constructor(private router: Router) {}
-
-
-  selectConversation(name: string): void {
-    this.router.navigate(['/messages', name]);
-  }
 }

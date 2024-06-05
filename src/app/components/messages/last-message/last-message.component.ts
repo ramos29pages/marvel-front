@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UserMessage } from '../UserMessage';
+import { UserMessage } from '../../../types/LastMessage';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,8 @@ export class LastMessageComponent {
   @Input() ms !: UserMessage;
 
   constructor(private router : Router){}
-  
+
+
   selectConversation(name: string): void {
     console.log(`Conversation with ${name} selected`);
     this.router.navigate(['/messages', name]);

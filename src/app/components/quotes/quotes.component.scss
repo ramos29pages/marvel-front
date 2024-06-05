@@ -138,6 +138,103 @@ background: $navColor;
           }
         }
       }
+
+
+      .available {
+        // background-color: hwb(220 48% 2% / 0.2);
+        margin: 2px;
+        font-size: 0.7rem;
+        align-items: center;
+        justify-content: center;
+        color: gray;
+        height: 35px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: 0px 0px 0px 20px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.01);
+          transition: transform 0.2s ease;
+          cursor: pointer;
+          font-weight: bold;
+        }
+
+        .rmsdv {
+          border: 1px solid rgba(128, 128, 128, 0.5);
+          border-left: 5px solid $greenApp;
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          font-size: 1rem;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 20px;
+          color: #90c129;
+          border-radius: 5px;
+          height: 100%;
+          .status {
+            background-color: rgb(122, 165, 249, .3);
+        background-color: rgba(145, 193, 41, 0.2);
+            padding: 3px;
+            border-radius: 5px;
+            color: green;
+            font-size: 0.7rem;
+            text-align: center;
+            width: 60px;
+          }
+        }
+      }
+
+      // .available {
+      //   background-color: hwb(220 48% 2% / 0.2);
+      //   background-color: rgba(145, 193, 41, 0.2);
+      //   border-radius: 5px;
+      //   margin: 2px;
+      //   font-size: 0.7rem;
+      //   align-items: center;
+      //   color: gray;
+      //   height: 35px;
+      //   display: grid;
+      //   grid-template-columns: 20% 80%;
+      //   padding: 0px 0px 0px 20px;
+      //   transition: transform 0.2s ease;
+
+      //   &:hover {
+      //     transform: scale(1.01);
+      //     transition: transform 0.2s ease;
+      //     cursor: pointer;
+      //     font-weight: bold;
+      //   }
+
+      //   .rmsdv {
+      //     // border: 1px solid rgba(128, 128, 128, 0.5);
+      //     // background-color: rgba(145, 193, 41, 0.2);
+
+      //     // border-left: 5px solid $blueApp;
+      //     display: flex;
+      //     width: 100%;
+      //     gap: 10px;
+      //     font-size: 1rem;
+      //     align-items: center;
+      //     justify-content: flex-end;
+      //     padding-right: 20px;
+      //     color: $greenApp;
+      //     border-radius: 5px;
+      //     height: 100%;
+      //     .status {
+      //       background-color: $greenApp;
+      //       padding: 3px;
+      //       border-radius: 5px;
+      //       color: white;
+      //       font-size: 0.7rem;
+      //       text-align: center;
+      //       width: 60px;
+      //     }
+      //   }
+      // }
+
+
     }
 
     .infoMonth {

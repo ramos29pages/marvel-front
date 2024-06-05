@@ -156,6 +156,10 @@ $navColor: #f0f2f9;
             }
           }
 
+          .about-info{
+            color: gray;
+          }
+
         }
 
         .contact {
@@ -163,6 +167,10 @@ $navColor: #f0f2f9;
           display: flex;
           gap: 20px;
           padding: 10px 20px;
+
+          p{
+            color: gray;
+          }
         }
       }
     }
