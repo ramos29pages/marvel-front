@@ -1,0 +1,167 @@
+$greenApp: #90c129;
+$blueApp: #7aa5f9;
+$navColor: #f0f2f9;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.no-show{
+    display: none;
+}
+
+.container {
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+padding-top: 10px; 
+border-radius: 15px;
+background: $navColor;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin: 20px;
+    border-bottom: 1px solid gray;
+
+    select {
+      background: none;
+      inset: none;
+      border: none;
+    }
+  }
+
+  .diary {
+    .quotes {
+      // background-color: cadetblue;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .no-show {
+        display: none;
+      }
+
+      .reserved {
+        // background: rgba(220, 20, 60, 0.2);
+        margin: 2px;
+        color: gray;
+        font-size: 0.8rem;
+        height: 35px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: 0px 0px 0px 20px;
+        transition: transform 0.2s ease;
+
+        @media screen and (min-width:400px) {
+            font-size: .7rem;
+        }
+
+        &:hover {
+          transform: scale(1.01);
+          transition: transform 0.2s ease;
+          cursor: pointer;
+          font-weight: bold;
+        }
+
+        .rmsdv {
+          border: 1px solid rgba(128, 128, 128, 0.5);
+          border-left: 5px solid crimson;
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          font-size: 1rem;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 20px;
+          color: #7aa5f9;
+          border-radius: 5px;
+          height: 100%;
+          max-width: 100%;
+          .status {
+            background-color: rgba(220, 20, 60, .3);
+            padding: 3px;
+            border-radius: 5px;
+            color: crimson;
+            font-size: 0.7rem;
+            text-align: center;
+            width: 60px;
+          }
+        }
+      }
+
+      .on-hold {
+        // background-color: hwb(220 48% 2% / 0.2);
+        margin: 2px;
+        font-size: 0.7rem;
+        align-items: center;
+        color: gray;
+        height: 35px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding: 0px 0px 0px 20px;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.01);
+          transition: transform 0.2s ease;
+          cursor: pointer;
+          font-weight: bold;
+        }
+
+        .rmsdv {
+          border: 1px solid rgba(128, 128, 128, 0.5);
+          border-left: 5px solid $blueApp;
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          font-size: 1rem;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 20px;
+          color: #7aa5f9;
+          border-radius: 5px;
+          height: 100%;
+          .status {
+            background-color: rgb(122, 165, 249, .3);
+            padding: 3px;
+            border-radius: 5px;
+            color: #7aa5f9;
+            font-size: 0.7rem;
+            text-align: center;
+            width: 60px;
+          }
+        }
+      }
+    }
+
+    .infoMonth {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 0px 20px;
+      height: auto;
+
+      .datenow {
+        color: $greenApp;
+        font-size: x-large;
+        font-weight: bold;
+      }
+
+      .actionMonth {
+        color: $blueApp;
+        display: flex;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        height: auto;
+        font-size: large;
+      }
+    }
+  }
+}

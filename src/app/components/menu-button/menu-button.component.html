@@ -1,6 +1,6 @@
-<button routerLink="routerLink" >
+<button [class.daniel]="isActive(routerLink)" [routerLink]="routerLink">
     <div class="cont-icon">
-        <img src="{{iconURL}}" alt="icon">
+        <i class="{{iconClass}}"></i>
     </div>
-    <p routerLinkActive="daniel">{{label | capitalize}}</p>
+    <p>{{label | capitalize}}</p>
 </button>

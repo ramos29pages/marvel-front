@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
+import { QuotesComponent } from '../quotes/quotes.component';
 
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [FooterComponent],
+  imports: [FooterComponent, QuotesComponent],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss',
 })
@@ -12,6 +13,7 @@ export class AccountComponent {
 
   protected ahora = new Date();
   protected name = 'Daniel Ramos';
+  protected onlyReserved = true;
   protected countryFlag = 'it';
   protected categories : string[] = ["plastic","stainless-steel", "paper","non-ferrous-metals"]
   protected profileURL: string = 'https://robohash.org/alberto';

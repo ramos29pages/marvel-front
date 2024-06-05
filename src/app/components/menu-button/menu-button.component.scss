@@ -3,14 +3,17 @@ $graylith: #f0f4f9;
 $gray2: #a2a2a2;
 $gray3: #505050;
 $gray5 : #222e;
+$greenApp: #90c129;
+$blueApp: #7aa5f9;
+$navColor: #f0f4f9;
 
-.active-link {
+
+.daniel {
   font-weight: bold;
-  color: red;
+  color: $greenApp;
 }
 
-
-button {
+button {  
 
     background: $graylith;
     border: none;
@@ -29,6 +32,7 @@ button {
     min-width: 40px;
     min-height: 40px;
     border-radius: 5px;
+    font-size: 1.1rem;
 
     img {
       width: 50%;

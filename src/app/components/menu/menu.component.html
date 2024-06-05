@@ -2,33 +2,35 @@
     <app-menu-button 
         [routerLink]="'dashboard'" 
         [label]="'dashboard'" 
-        [iconURL]="'../../assets/icons/home.svg'"
-        routerLinkActive="daniel">
+        [iconClass]="'fa-solid fa-home'"
+        routerLinkActive="daniel"
+        [routerLinkActiveOptions]="{exact : true}">
     </app-menu-button>
     <p>COMMUNITY</p>
     <app-menu-button 
         [routerLink]="'members'" 
         [label]="'members'"
-        [iconURL]="'../../assets/icons/user.svg'"
-        routerLinkActive="daniel">
+        [iconClass]="'fa-solid fa-users'"
+        routerLinkActive="daniel"
+        [routerLinkActiveOptions]="{exact : true}">
     </app-menu-button>
     <app-menu-button 
         [routerLink]="'messages'" 
         [label]="'Chat'"
-        [iconURL]="'../../assets/icons/messages.svg'"
+        [iconClass]="'fa-solid fa-comments'"
         routerLinkActive="daniel">
     </app-menu-button>
     <app-menu-button 
         [routerLink]="'myquotes'" 
         [label]="'my quotes'"
-        [iconURL]="'../../assets/icons/scheduler.svg'"
+        [iconClass]="'fa-solid fa-calendar-day'"
         routerLinkActive="daniel">
     </app-menu-button>
     <p>MY PROFILE</p>
     <app-menu-button 
         [routerLink]="'account'" 
         [label]="'account'"
-        [iconURL]="'../../assets/icons/userconfig.svg'"
+        [iconClass]="'fa-solid fa-user-gear'"
         routerLinkActive="daniel">
     </app-menu-button>
 </div>

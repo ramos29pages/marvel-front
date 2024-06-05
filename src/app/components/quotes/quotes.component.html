@@ -1,1 +1,45 @@
-<p>quotes works!</p>
+<div class="container">
+    <section class="header">
+        <h1>Quotes Scheduler</h1>
+        <div class="dropdown">
+            <select>
+                <option *ngFor="let mes of meses" [value]="mes">{{mes}}</option>
+            </select>
+        </div>
+    </section>
+    <section class="diary">
+        <div class="infoMonth">
+            <p class="datenow">19 septiembre</p>
+            <div class="actionMonth">
+                <i id="backmonth" class="fa-solid fa-arrow-left"></i>
+                <i id="nextmonth" class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <section class="quotes">
+            @for(slot of timeSlots ; track slot){
+                @if(onlyReserved === true && slot.status === 'reserved'){
+                    <div [ngClass]="{ 'reserved': slot.status === 'reserved'}">
+                        <div>{{slot.startTime}} - {{slot.endTime}}</div>
+                        <div class="rmsdv">
+                            <div [ngClass]="{'no-show': slot.status === 'reserved'}">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <p class="status">{{slot.status}}</p>
+                        </div>
+                    </div>
+                }@else if(onlyReserved === false){
+                    <div [ngClass]="{ 'reserved': slot.status === 'reserved', 'on-hold': slot.status === 'on-hold'}">
+                        <div>{{slot.startTime}} - {{slot.endTime}}</div>
+                        <div class="rmsdv">
+                            <div [ngClass]="{'no-show': slot.status === 'reserved'}">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <p class="status">{{slot.status}}</p>
+                        </div>
+                    </div>
+                }
+            }
+        </section>
+        
+    </section>
+</div>
