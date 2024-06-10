@@ -32,7 +32,7 @@ export class QuotesComponent implements OnInit {
         startTimeValue: 800,
         endTime: "8:15AM",
         endTimeValue: 815,
-        status: 'reserved',
+        status: 'available',
         reservedBy: 1,
         reservedWith: 2
       },
@@ -52,7 +52,7 @@ export class QuotesComponent implements OnInit {
         startTimeValue: 840,
         endTime: "8:55AM",
         endTimeValue: 855,
-        status: 'on-hold',
+        status: 'available',
         reservedBy: 1,
         reservedWith: 2
       },
