@@ -1,25 +1,17 @@
 <section>
-    <div class="cont-calendar">
-        <div class="calendar">
-            <h2>{{ month }} {{ year }}</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>S</th>
-                  <th>M</th>
-                  <th>T</th>
-                  <th>W</th>
-                  <th>T</th>
-                  <th>F</th>
-                  <th>S</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let week of weeks">
-                  <td *ngFor="let day of week">{{ day }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <div class="cont-infodate">
+    <h3>{{ monthName() }} {{ year() }}</h3>
+    <div class="cont-actions">
+      <i class="fa-solid fa-arrow-left" (click)="changeMonth(-1)"></i>
+      <i class="fa-solid fa-arrow-right" (click)="changeMonth(1)"></i>
     </div>
+  </div>
+  <table>
+    <tr>
+      <th *ngFor="let DIA of _WEEKDAYS">{{DIA}}</th>
+    </tr>
+    <tr class="row" *ngFor="let row of calendar()">
+      <td class="daterow" *ngFor="let cell of row">{{ cell }}</td>
+    </tr>
+  </table>
 </section>

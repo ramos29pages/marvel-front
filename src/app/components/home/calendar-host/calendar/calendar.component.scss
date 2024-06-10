@@ -1,24 +1,61 @@
-
+$greenApp: #90c129;
+$blueApp: #7aa5f9;
 $navColor: #f0f4f9;
 
 section{
+  background-color: $navColor;
+  width: 90%;
+  height: calc(100% - 15px);
+  margin-top: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 50px 1fr;
 
-    width: 100%;
+  .cont-infodate{
+
+    display: flex;
     height: 100%;
-    // background-color: crimson;
-    padding: 20px 0px 0px 0px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    border-bottom: 2px solid rgb(128, 128, 128, 0.3);
+    z-index: 1;
 
-    .cont-calendar{
+    .cont-actions{
+      color: $blueApp;
+      font-size: 1.5rem;
+      display: flex;
+      gap: 30px;
 
-        background: $navColor;
-        width: 90%;
-        height: 100%;
-        border-radius: 15px;
-        display: grid;
-        place-items: center;
-
-        p{
-            margin: 0;
-        }
+      i:hover{
+        cursor: pointer;
+      }
     }
+  }
+
+  table {
+    border-collapse: collapse;
+    background: royalblue;
+    padding: 0px 15px;
+    width: 100%;
+
+    td,
+    th {
+      padding: 3px;
+      text-align: center;
+    }
+
+    .daterow{
+      background-color: $navColor;
+      color: gray;
+    }
+
+    th {
+      font-weight: bold;
+      background: $navColor;
+    }
+  }
+
+
 }
