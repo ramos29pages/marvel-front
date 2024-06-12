@@ -1,6 +1,6 @@
 <section>
   <div class="cont-infodate">
-    <h3>{{ monthName() }} {{ year() }}</h3>
+    <h2>{{ monthName() }} {{ year() }}</h2>
     <div class="cont-actions">
       <i class="fa-solid fa-arrow-left" (click)="changeMonth(-1)"></i>
       <i class="fa-solid fa-arrow-right" (click)="changeMonth(1)"></i>
@@ -8,10 +8,10 @@
   </div>
   <table>
     <tr>
-      <th *ngFor="let DIA of _WEEKDAYS">{{DIA}}</th>
+      <th *ngFor="let DIA of _WEEKDAYS">{{ DIA }}</th>
     </tr>
     <tr class="row" *ngFor="let row of calendar()">
-      <td class="daterow" *ngFor="let cell of row">{{ cell }}</td>
+      <td class="daterow" *ngFor="let cell of row" [ngClass]="{ 'has-quote': cell.hasQuote }">{{ cell.date || '' }}</td>
     </tr>
   </table>
 </section>

@@ -36,7 +36,6 @@ section{
 
   table {
     border-collapse: collapse;
-    background: royalblue;
     padding: 0px 15px;
     width: 100%;
 
@@ -49,6 +48,10 @@ section{
     .daterow{
       background-color: $navColor;
       color: gray;
+    }
+
+    .has-quote {
+      background-color:  rgb(144, 193, 41, .4); /* Puedes cambiar esto a cualquier color que prefieras */
     }
 
     th {

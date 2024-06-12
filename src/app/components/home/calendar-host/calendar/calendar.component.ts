@@ -1,3 +1,4 @@
+import { QuotesService } from './../../../../services/quotes.service';
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit, Signal, WritableSignal, computed, input } from '@angular/core';
 
@@ -10,31 +11,49 @@ import { Component, Input, OnInit, Signal, WritableSignal, computed, input } fro
 })
 
 export class CalendarComponent implements OnInit {
-  @Input() year !: WritableSignal<number>;
-  @Input() month !: WritableSignal<number>;
+  @Input() year!: WritableSignal<number>;
+  @Input() month!: WritableSignal<number>;
   _WEEKDAYS = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-  calendar !: Signal<string[][]>;
-  monthName !: Signal<string>;
+  calendar!: Signal<{ date: number, hasQuote: boolean }[][]>;
+  monthName!: Signal<string>;
+  quotes: { date: Date, quote: string }[] = [];
+
+  constructor(private quoteService: QuotesService) {}
 
   ngOnInit(): void {
     this.monthName = computed(() => this.showMonth(this.month()));
-    this.calendar = computed(() => this.createCalendar(this.year(), this.month()));
+    this.loadQuotes();
+
+    this.calendar = computed(() => this.createCalendar(this.year(), this.month(), this.quotes));
   }
 
-  createCalendar(year: number, month: number): string[][] {
+  loadQuotes() {
+    this.quoteService.getQuotes().subscribe(quotes => {
+      this.quotes = quotes;
+      this.createCalendar(this.year(), this.month(), this.quotes); // Actualiza el calendario con las citas
+    });
+  }
+
+  createCalendar(year: number, month: number, quotes: { date: Date, quote: string }[]): { date: number, hasQuote: boolean }[][] {
     let mon = month - 1; // Los meses en JS son 0..11, no 1..12
     let d = new Date(year, mon);
-    let table: string[][] = [];
+    let table: { date: number, hasQuote: boolean }[][] = [];
 
-    let row: string[] = [];
+    let row: { date: number, hasQuote: boolean }[] = [];
     // Espacios en la primera línea desde lunes hasta el primer día del mes
     for (let i = 0; i < this.getDay(d); i++) {
-      row.push('');
+      row.push({ date: 0, hasQuote: false });
     }
 
     // <td> con el día  (1 - 31)
     while (d.getMonth() === mon) {
-      row.push(d.getDate().toString());
+      const day = d.getDate();
+      const hasQuote = quotes.some(quote =>
+        quote.date.getFullYear() === year &&
+        quote.date.getMonth() === mon &&
+        quote.date.getDate() === day
+      );
+      row.push({ date: day, hasQuote });
 
       if (this.getDay(d) % 7 === 6) { // domingo, último día de la semana --> nueva línea
         table.push(row);
@@ -47,7 +66,7 @@ export class CalendarComponent implements OnInit {
     // Espacios después del último día del mes hasta completar la última línea
     if (this.getDay(d) !== 0) {
       for (let i = this.getDay(d); i < 7; i++) {
-        row.push('');
+        row.push({ date: 0, hasQuote: false });
       }
     }
 
@@ -89,5 +108,8 @@ export class CalendarComponent implements OnInit {
     } else {
       this.month.set(newMonth);
     }
+
+    // Recargar las citas al cambiar de mes
+    this.loadQuotes();
   }
 }
