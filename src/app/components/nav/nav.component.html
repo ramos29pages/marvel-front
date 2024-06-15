@@ -5,20 +5,22 @@
     <div class="cont-slogan">
         <p>For, you, for the planet, one event at the time</p>
     </div>
-    <section>
-        <div class="notification">
-            <img src="../../../assets/icons/notification.svg" alt="icon">
-            <p id="notifications">2</p>
-        </div>
-        <div class="close-session">
-            <button>
-                <div class="cont-user-image">
-                    <img src="{{imageProfileURL}}" alt="profileimage">
-                    <p class="signal-notification"></p>
-                </div>
-                <p>Hola, <span id="username">{{username}}</span><i class="fa-solid fa-chevron-down"></i></p>
+    @if(isAutenticated$ | async){
+      <section>
+          <div class="notification">
+              <img src="../../../assets/icons/notification.svg" alt="icon">
+              <p id="notifications">2</p>
+          </div>
+          <div class="close-session">
+              <button>
+                  <div class="cont-user-image">
+                      <img src="{{imageProfileURL}}" alt="profileimage">
+                      <p class="signal-notification"></p>
+                  </div>
+                  <p>Hola, <span id="username">{{username}}</span><i class="fa-solid fa-chevron-down"></i></p>
 
-            </button>
-        </div>
-    </section>
+              </button>
+          </div>
+      </section>
+    }
 </div>

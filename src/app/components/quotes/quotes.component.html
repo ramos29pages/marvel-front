@@ -1,45 +1,50 @@
 <div class="container">
-    <section class="header">
+  <section class="header">
         <h1>Quotes Scheduler</h1>
         <div class="dropdown">
             <select>
-                <option *ngFor="let mes of meses" [value]="mes">{{mes}}</option>
+                <option *ngFor="let m of optionMonths" [value]="m">{{m}}</option>
             </select>
         </div>
     </section>
     <section class="diary">
         <div class="infoMonth">
-            <p class="datenow">19 septiembre</p>
+            <div class="titles">
+              <p class="slot-title">MY SLOTS</p>
+            </div>
             <div class="actionMonth">
+              <p class="datenow">19 septiembre</p>
                 <i id="backmonth" class="fa-solid fa-arrow-left"></i>
                 <i id="nextmonth" class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
         <section class="quotes">
-            @for(slot of timeSlots ; track slot){
-                @if(onlyReserved === true && slot.status === 'reserved'){
-                    <div [ngClass]="{ 'reserved': slot.status === 'reserved'}">
-                        <div>{{slot.startTime}} - {{slot.endTime}}</div>
-                        <div class="rmsdv">
-                            <div [ngClass]="{'no-show': slot.status === 'reserved'}">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                            <p class="status">{{slot.status}}</p>
-                        </div>
-                    </div>
-                }@else if(onlyReserved === false){
-                    <div [ngClass]="{ 'reserved': slot.status === 'reserved', 'on-hold': slot.status === 'on-hold', 'available': slot.status === 'available' }">
-                        <div>{{slot.startTime}} - {{slot.endTime}}</div>
-                        <div class="rmsdv">
-                            <div [ngClass]="{'no-show': slot.status === 'reserved'}">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                            <p class="status">{{slot.status}}</p>
-                        </div>
-                    </div>
+          <div class="cont-slots">
+            @for( slot of slots; track slot){
+              <div class="fila">
+
+                <div class="a1">
+                  @if(slot.reserved){
+                  <div class="userSlotInfo">
+                    <p>{{slot.user.name}}</p>
+                    <p>{{slot.user.company_name}}</p>
+                  </div>
                 }
+                </div>
+                <div class="a2">
+                  <div [ngClass]="{ 'slot' : !slot.reserved, 'slot-reserved': slot.reserved}">
+                    <p>{{slot.startTime | hourFormat}} - {{slot.startTimeRest | hourFormat}}</p>
+                    <h3>{{slot.duration}} Mins</h3>
+                  </div>
+                </div>
+              </div>
             }
+          </div>
         </section>
-        
+
     </section>
+
+
 </div>
+
+<app-footer></app-footer>

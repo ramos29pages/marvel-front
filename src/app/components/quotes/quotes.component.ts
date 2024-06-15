@@ -1,75 +1,56 @@
+import { HourFormatPipe } from './../../shared/pipes/hour-format.pipe';
+import { MonthService } from './../../services/month.service';
+import { QuotesService } from './../../services/quotes.service';
 import { CommonModule } from '@angular/common';
-import { Component, Input, input, OnInit } from '@angular/core';
+import { Component, inject, Input, input, OnInit } from '@angular/core';
 import TimeSlot from '../../types/TimeSlot';
+import { UserDynamicSlots } from '../../models/slots';
+import { FooterComponent } from '../footer/footer.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-quotes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FooterComponent, HourFormatPipe],
   templateUrl: './quotes.component.html',
   styleUrl: './quotes.component.scss',
 })
 export class QuotesComponent implements OnInit {
 
   @Input() onlyReserved : boolean = false;
-  meses: string[] = [
-    'Junio 2024',
-    'Julio 2024',
-    'Agosto 2024',
-    'Septiembre 2024',
-    'Octubre 2024',
-    'Noviembre 2024',
-    'Diciembre 2024',
-  ];
+  quotesService = inject(QuotesService);
+  monthService = inject(MonthService);
+  optionMonths: string[] = [];
+  hour: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  timeSlots!: TimeSlot[];
+  slots: UserDynamicSlots[] = [];
+  slotsView: UserDynamicSlots[][] = [];
+
 
   ngOnInit(): void {
-    this.timeSlots =   [
-      {
-        membership: 'DINAMYC',
-        startTime: "8:00AM",
-        startTimeValue: 800,
-        endTime: "8:15AM",
-        endTimeValue: 815,
-        status: 'available',
-        reservedBy: 1,
-        reservedWith: 2
-      },
-      {
-        membership: 'DINAMYC',
-        startTime: "8:20AM",
-        startTimeValue: 820,
-        endTime: "8:35AM",
-        endTimeValue: 835,
-        status: 'reserved',
-        reservedBy: 1,
-        reservedWith: 2
-      },
-      {
-        membership: 'DINAMYC',
-        startTime: "8:40AM",
-        startTimeValue: 840,
-        endTime: "8:55AM",
-        endTimeValue: 855,
-        status: 'available',
-        reservedBy: 1,
-        reservedWith: 2
-      },
-      {
-        membership: 'DINAMYC',
-        startTime: "8:40AM",
-        startTimeValue: 840,
-        endTime: "8:55AM",
-        endTimeValue: 855,
-        status: 'reserved',
-        reservedBy: 1,
-        reservedWith: 2
-      }
-    ]
 
     console.log('ONLY-RES3RVED:::',this.onlyReserved);
     console.log(new Date().getHours() + ':' + new Date().getMinutes());
+    this.optionMonths = this.monthService.month;
+    this.slots = this.quotesService.generateSlots('8:00', '20:00', 15, 5);
+    console.log(this.slots);
+    this.slotsView = this.convertirEnBidimensional(this.slots, 2);
+    console.log(this.slotsView);
   }
+
+  updateSeconds(second: number){
+    this.hour.next(second);
+  }
+
+
+  convertirEnBidimensional(slots: UserDynamicSlots[], elementosPorSubarreglo: number): UserDynamicSlots[][] {
+    let slotsView: UserDynamicSlots[][] = [];
+    for (let i = 0; i < slots.length; i += elementosPorSubarreglo) {
+      slotsView.push(slots.slice(i, i + elementosPorSubarreglo));
+    }
+    return slotsView;
+  }
+
+
 
 }
