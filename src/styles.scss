@@ -46,6 +46,12 @@ $ms-front-theme: mat.define-light-theme((
     padding: 0px;
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 body{
     margin: 0px;
     padding: 0px;
@@ -55,11 +61,4 @@ body{
     display: grid;
     place-items: center;
     font-family: "Poppins", sans-serif;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.daniel {
-  background-color: blue;
 }

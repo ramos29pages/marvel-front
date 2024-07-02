@@ -3,7 +3,8 @@ import { ChatComponent } from './chat/chat.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 import { Router } from '@angular/router';
-import {UserMessage, User} from '../../types/LastMessage';
+import {UserMessage} from '../../models/LastMessage';
+import {IUser} from '../../models/user';
 import { CommonModule } from '@angular/common';
 import { LastMessageComponent } from './last-message/last-message.component';
 
@@ -21,20 +22,29 @@ export class MessagesComponent {
   sloganToChatSection: string = 'Send and receive messages to all users.';
   title : string = 'Chat';
 
-  user1: User = {
-    id:1,
-    name: "Daniel Ramos",
-    companyName: "Mission Recycling",
-    workPosition: "Developer",
-    country: "Colombia",
+  user1: IUser = {
+    _id: 1,
+    name: 'Ramosdev',
+    surname: 'Ramos Dev',
+    flag: 'co',
+    company: 'Mission Recycling',
+    workPosition: 'developer',
+    profileURL: 'https://robohash.org/ramosdev',
+    categories: [ 'plastic', 'non-ferrous-metals'],
+    country: 'colombia'
+
   };
 
-  user2: User = {
-    id:2,
-    name: "Karen Rosero",
-    companyName: "Corporacion Nuñez",
-    workPosition: "Manager",
-    country: "Chile",
+  user2: IUser = {
+    _id: 1,
+    name: 'karen',
+    surname: 'Rosero',
+    flag: 'co',
+    company: 'Mission Recycling',
+    workPosition: 'developer',
+    profileURL: 'https://robohash.org/ramosdev',
+    categories: [ 'plastic', 'non-ferrous-metals'],
+    country: 'colombia'
   };
 
   messages : UserMessage[] = [{

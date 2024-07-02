@@ -1,0 +1,154 @@
+$greenApp: #90c129;
+$blueApp: #7aa5f9;
+$navColor: #f0f4f9;
+
+.cont-table {
+  // background-color: crimson;
+
+  table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border: none;
+
+    .headd {
+      position: sticky;
+      top: 0;
+      font-size: 0.6rem;
+      padding-bottom: 10px;
+      border: none;
+      border-bottom: 2px solid rgba(143, 143, 143, 0.3);
+      background-color: white;
+      color: gray;
+      font-weight: 300;
+      th:nth-child(2){
+        text-align: start;
+      }
+    }
+
+    tr {
+      max-height: 50px;
+      border-bottom: 1px solid gray;
+
+      &:hover {
+        background-color: #2d2d2d18;
+      }
+
+      .cont-profile {
+        display: grid;
+        place-items: center;
+
+        .cont-img-profile {
+          min-height: 80px;
+          padding-right: 5px;
+          display: grid;
+          place-items: center;
+
+          .cont {
+            background-color: #2d2d2d;
+            border: 2px solid white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .info-profile {
+        min-width: 100px;
+        max-height: 50px;
+        p {
+          margin: 0px;
+        }
+
+        .username {
+          font-weight: bold;
+          font-size: 0.8rem;
+          color: #2d2d2d;
+        }
+
+        .company-name {
+          font-size: 0.6rem;
+          color: #b4b4b4;
+        }
+
+        .work-position {
+          font-size: 0.6rem;
+          color: #b4b4b4;
+        }
+      }
+
+      .country {
+        text-align: center;
+        padding: 5px;
+
+        .country-icon {
+          transform: scale(1.1);
+        }
+      }
+
+      .categories {
+        text-align: center;
+
+        .cont-icon-categories {
+          img {
+            width: 15px;
+            margin-right: 2px;
+          }
+        }
+      }
+
+      .actions {
+        padding: 5px;
+        .cont-actions {
+          min-width: 100%;
+          min-height: 100%;
+          display: flex;
+          gap: 8px;
+          justify-content: center;
+
+          .btn-chat {
+            background-color: $greenApp;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 8px;
+            p {
+              display: none;
+            }
+          }
+
+          .btn-view {
+            background-color: $blueApp;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            min-width: 30px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 5px;
+            p {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

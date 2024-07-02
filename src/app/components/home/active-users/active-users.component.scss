@@ -3,25 +3,26 @@ $blueApp: #7aa5f9;
 $navColor: #f0f4f9;
 section {
   box-sizing: border-box;
-  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 100%;
   height: 100%;
 
   .container {
     box-sizing: border-box;
-    width: 90%;
+    border-radius: 10px;
     height: 100%;
+    width: 95%;
     padding: 15px;
     background-color: $navColor;
-    border-radius: 15px;
     display: grid;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 30px 1fr;
 
     .title {
       margin: 0px;
       padding: 0px;
-      font-size: 1.2rem;
+      font-size: 1rem;
       display: flex;
       font-weight: bold;
       border-bottom: 1px solid rgba(128, 128, 128, 0.51);
@@ -30,55 +31,146 @@ section {
 
     .users {
       margin-top: 10px;
+      padding-bottom: 10px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      padding-right: 20px;
-      overflow: hidden;
-      max-height: 100px;
-      overflow-y: scroll;
       gap: 15px;
-      max-width: 300px;
+      width: 100%;
+      overflow: hidden;
+      overflow-x: scroll;
+      // background-color: crimson;
+      padding: 10px 0px;
+      padding-bottom: 20px;
 
-      &::-webkit-scrollbar{
-        width: 8px;
+      &::-webkit-scrollbar {
+        height: 5px;
       }
 
-      &::-webkit-scrollbar-thumb{
-        background-color: rgba(128, 128, 128, 0.5);
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(124, 124, 124, 0.5);
         border-radius: 5px;
       }
 
       .user {
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
-        border: 2px solid white;
-        position: relative;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 5px;
-          right: 12px;
-          transform: translate(50%, -50%);
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: $greenApp;
-          border: 1px solid white;
-        }
+        height: 50px;
+        width: 50px;
 
         .cont-profile {
+          background-color: coral;
           height: 60px;
           width: 60px;
+          padding: 5px;
+          box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+          border: 2px solid white;
+          position: relative;
+          border-radius: 50%;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            transform: translate(50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $greenApp;
+            border: 1px solid white;
+          }
 
           img {
             width: 100%;
             border-radius: 50%;
             object-fit: cover;
             background-color: #91c1293e;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+  section {
+    box-sizing: border-box;
+    padding-top: 3vh;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .container {
+      box-sizing: border-box;
+      width: 90%;
+      height: 100%;
+      padding: 15px;
+      background-color: $navColor;
+      border-radius: 15px;
+      display: grid;
+      grid-template-rows: 50px 1fr;
+
+      .title {
+        margin: 0px;
+        padding: 0px;
+        font-size: 1.2rem;
+        display: flex;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.51);
+        color: #2f2f2f;
+      }
+
+      .users {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding-right: 20px;
+        overflow: hidden;
+        max-height: 100px;
+        overflow-y: scroll;
+        gap: 15px;
+        max-width: 300px;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(128, 128, 128, 0.5);
+          border-radius: 5px;
+        }
+
+        .user {
+          border-radius: 50%;
+          height: 60px;
+          width: 60px;
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+          border: 2px solid white;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 12px;
+            transform: translate(50%, -50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $greenApp;
+            border: 1px solid white;
+          }
+
+          .cont-profile {
+            height: 60px;
+            width: 60px;
+
+            img {
+              width: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+              background-color: #91c1293e;
+            }
           }
         }
       }

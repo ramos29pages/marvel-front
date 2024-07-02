@@ -3,7 +3,7 @@ import { MonthService } from './../../services/month.service';
 import { QuotesService } from './../../services/quotes.service';
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input, input, OnInit } from '@angular/core';
-import TimeSlot from '../../types/TimeSlot';
+import TimeSlot from '../../models/TimeSlot';
 import { UserDynamicSlots } from '../../models/slots';
 import { FooterComponent } from '../footer/footer.component';
 import { BehaviorSubject } from 'rxjs';

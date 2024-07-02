@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UserMessage } from '../../../types/LastMessage';
+import { UserMessage } from '../../../models/LastMessage';
 import { Router } from '@angular/router';
 
 @Component({

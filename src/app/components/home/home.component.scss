@@ -1,5 +1,52 @@
 .container{
     box-sizing: border-box;
+    background-color: rgb(81, 182, 136);
+    display: grid;
+    place-items: center;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: auto;
+    max-height: 100%;
+    // grid-template-areas: "search"
+    //                      "actives"
+    //                      "footer footer";
+    // grid-template-rows: 32vh 1fr 10vh;
+    // grid-template-columns: 1fr 25vw;
+    // background-color:  rgb(144, 79, 79);
+
+    .search-company{
+        // background-color: coral;
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .active-users{
+        // background: chartreuse;
+        display: grid;
+        place-items: center;
+        width: 100%;
+    }
+
+    .calendar{
+        // background-color: chocolate;
+        display: grid;
+        place-items: center;
+        width: 100%;
+    }
+
+    .app-footer{
+    }
+}
+
+
+
+@media only screen and (min-width: 768px){}
+
+@media only screen and (min-width: 992px){
+  .container{
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     display: grid;
@@ -41,4 +88,5 @@
     .app-footer{
         grid-area: footer;
     }
+}
 }
