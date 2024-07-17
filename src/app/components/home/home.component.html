@@ -1,7 +1,11 @@
-<div class="container">
+<!-- <div class="container">
     <app-search-company class="search-company"></app-search-company>
-    <app-active-users class="active-users"></app-active-users>
-    <!--
-      <app-calendar-host class="calendar"></app-calendar-host>
-    <app-footer class="app-footer"></app-footer> -->
-</div>
+</div> -->
+
+<section>
+  <app-nav class="nav"></app-nav>
+  <app-menu class="menu"></app-menu>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</section>

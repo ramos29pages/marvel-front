@@ -5,7 +5,9 @@
     <div class="user-data">
         <section class="chats">
             @for(ms of messages; track ms.id){
-                <app-last-message [ms]="ms"></app-last-message>
+                <app-last-message [ms]="ms">
+
+                </app-last-message>
             }
         </section>
         <section class="general-chat">
@@ -16,5 +18,5 @@
             </div>
         </section>
     </div>
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
 </div>

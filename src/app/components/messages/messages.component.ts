@@ -24,12 +24,12 @@ export class MessagesComponent {
 
   user1: IUser = {
     _id: 1,
-    name: 'Ramosdev',
-    surname: 'Ramos Dev',
+    name: 'Juan',
+    surname: 'Perez',
     flag: 'co',
     company: 'Mission Recycling',
     workPosition: 'developer',
-    profileURL: 'https://robohash.org/ramosdev',
+    profileURL: '../../../assets/images/ph2.jpg',
     categories: [ 'plastic', 'non-ferrous-metals'],
     country: 'colombia'
 
@@ -37,29 +37,101 @@ export class MessagesComponent {
 
   user2: IUser = {
     _id: 1,
-    name: 'karen',
+    name: 'Estiven',
     surname: 'Rosero',
     flag: 'co',
     company: 'Mission Recycling',
     workPosition: 'developer',
-    profileURL: 'https://robohash.org/ramosdev',
+    profileURL: '../../../assets/images/ph1.jpg',
     categories: [ 'plastic', 'non-ferrous-metals'],
     country: 'colombia'
   };
 
-  messages : UserMessage[] = [{
+  messages : UserMessage[] = [
+    {
     id: 1,
     user: this.user1,
     lastHour: "8:15am",
-    lastMessage: "Lorem Ipsum",
-    imgURL: "https://robohash.org/alberto"
-  },{
+    lastMessage: "Thank you 😊",
+    imgURL: "https://robohash.org/alberto",
+    read : true
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "We can take a look at",
+    imgURL: "https://robohash.org/hernestico",
+    read: false
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "Yes, it´s perfect for me, we can to try some dee",
+    imgURL: "https://robohash.org/hernestico",
+    read : true
+  },
+  {
     id: 2,
     user: this.user2,
     lastHour: "8:35am",
     lastMessage: "lorem Ipsum",
     imgURL: "https://robohash.org/hernestico"
-  }];
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "lorem Ipsum",
+    imgURL: "https://robohash.org/hernestico",
+    read : true
+  },
+    {
+    id: 1,
+    user: this.user1,
+    lastHour: "8:15am",
+    lastMessage: "Lorem Ipsum",
+    imgURL: "https://robohash.org/alberto",
+    read : true
+
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "lorem Ipsum",
+    imgURL: "https://robohash.org/hernestico"
+  },
+    {
+    id: 1,
+    user: this.user1,
+    lastHour: "8:15am",
+    lastMessage: "Lorem Ipsum",
+    imgURL: "https://robohash.org/alberto"
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "lorem Ipsum",
+    imgURL: "https://robohash.org/hernestico"
+  },
+    {
+    id: 1,
+    user: this.user1,
+    lastHour: "8:15am",
+    lastMessage: "Lorem Ipsum",
+    imgURL: "https://robohash.org/alberto"
+  },
+  {
+    id: 2,
+    user: this.user2,
+    lastHour: "8:35am",
+    lastMessage: "lorem Ipsum",
+    imgURL: "https://robohash.org/hernestico"
+  }
+];
 
   constructor(private router: Router) {}
 }

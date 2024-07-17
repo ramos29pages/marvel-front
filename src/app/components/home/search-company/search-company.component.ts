@@ -1,16 +1,26 @@
+import { CommonModule } from '@angular/common';
 import { UserSearchComponent } from '../user-search/user-search.component';
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-search-company',
   standalone: true,
-  imports: [UserSearchComponent],
+  imports: [UserSearchComponent, CommonModule],
   templateUrl: './search-company.component.html',
   styleUrl: './search-company.component.scss'
 })
 export class SearchCompanyComponent {
 
+  desktop = false;
+
   @ViewChild('countrySelect') countrySelect!: ElementRef<HTMLSelectElement>;
+
+  filters = [
+    "LATEST",
+    "ORLDER",
+    "ORLDER",
+    "ORLDER",
+  ]
 
   openSelect() {
     // Enfocar el select

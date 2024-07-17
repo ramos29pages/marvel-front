@@ -1,0 +1,46 @@
+<section>
+  <main>
+    <div class="cont-section-logo">
+      <div class="cont-logo">
+        <img src="../../../assets/images/logo.png" alt="company-logo" srcset="../../../assets/images/logo.png">
+      </div>
+      <h2>Mission Recycling</h2>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+      <div  [ngClass]="{ input: form, errorinput : user?.invalid && (user?.dirty || user?.touched)}">
+        <i class="fa-solid fa-user icon"></i>
+        <input type="text" id="user" placeholder=" " formControlName="user" required>
+        <label for="user">Username</label>
+      </div>
+      <!--   -->
+      <div *ngIf="user?.invalid && (user?.dirty || user?.touched)" class="error">
+        <p>
+          <i class="fa-solid fa-circle-info"></i>
+          Username is required.
+        </p>
+      </div>
+      <div [ngClass]="{ input: form, errorinput : password?.invalid && (password?.dirty || password?.touched)}">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="{{passtype}}" id="password" placeholder=" " formControlName="password">
+        <label for="password">Password</label>
+        <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
+      </div>
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+        <p>
+          <i class="fa-solid fa-circle-info"></i>
+          Password is required.
+        </p>
+      </div>
+      <div class="cont-button">
+        <p (click)="forgotPassword()" class="forgot">Forgot your password ?</p>
+        <button>
+          Login
+        </button>
+        <p (click)="joinTheEvent()" class="dont">
+          You do not have an account?
+        </p>
+      </div>
+    </form>
+  </main>
+</section>

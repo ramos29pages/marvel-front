@@ -12,18 +12,20 @@ $navColor: #f0f2f9;
 
 .container {
   display: grid;
-  grid-template-rows: 80px 1fr 80px;
-  height: 90vh;
+  grid-template-rows: 56px 1fr;
+  height: 100%;
   font-family: "Poppins", sans-serif;
 
   .title {
+    padding-top: 8px;
     // background-color: crimson;
 
     p {
-      margin-left: 20px;
-      margin-top: 30px;
-      padding-bottom: 20px;
       font-size: 1.2rem;
+      margin: 0px;
+      // background-color: crimson;
+      padding: 0px;
+      padding-bottom: 8px;
       font-weight: bold;
       border-bottom: 1px solid rgb(207, 207, 207);
     }
@@ -31,13 +33,14 @@ $navColor: #f0f2f9;
 
   .user-data {
     background-color: white;
-    padding: 20px 40px 0px 20px;
+    // background-color: rgb(31, 75, 63);
+    overflow-y: scroll;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
     .chats {
-      width: 97%;
+      width: 100%;
     }
 
     .general-chat {
@@ -47,6 +50,8 @@ $navColor: #f0f2f9;
       display: grid;
       height: 100%;
       place-items: center;
+      display: none;
+
 
       .info {
         // background-color: crimson;

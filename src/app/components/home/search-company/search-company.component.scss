@@ -3,20 +3,21 @@ $blueApp: #7aa5f9;
 $navColor: #f0f4f9;
 
 .container {
-  // background: rgb(100, 14, 31);
-  width: 95%;
+  width: 100%;
   max-height: 100%;
-  margin-top: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
   background-color: white;
+  overflow: hidden;
+  // background: rgb(100, 14, 31);
+
 
   .users {
     display: grid;
-    overflow-x: hidden;
+    overflow: hidden;
     background-color: white;
-    max-height: 200px;
-    margin-bottom: 10px;
+    // background-color: crimson;
+    max-height: 100%; //LARGO DE LA TABLA
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -180,8 +181,10 @@ $navColor: #f0f4f9;
     }
 
     .cont-sort-section {
+
       .sort-section {
         .cont-button-sort {
+      position: relative;
           display: flex;
           justify-content: flex-end;
           background: white;
@@ -206,18 +209,41 @@ $navColor: #f0f4f9;
               margin: 0 0px 0 10px;
             }
           }
+
+          .items{
+            display: none;
+            background-color: $navColor;
+            width: 100px;
+            color: gray;
+            box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.3);
+            font-size: .7rem;
+            border-radius: 12px;
+            padding: 8px;
+            position: absolute;
+            right: 10px;
+            z-index: 10;
+            bottom: -120px;
+
+            li{
+              list-style: none;
+
+            }
+          }
         }
 
       }
+
+
     }
   }
 
   .cont-title {
+    // padding: 0px 18px;
     width: 100%;
     border-bottom: 1px solid #b4b4b4;
     margin-bottom: 10px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     p{
       margin: 5px;
     }

@@ -14,6 +14,7 @@
                 <div class="icon-filter">
                   <i class="fa-solid fa-filter"></i>
                 </div>
+               <!-- CONTENEDOR DE FILTROS DE CAT Y COUNTRY -->
                 <div class="ccfilters">
                   <div class="ccfilter">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -52,6 +53,9 @@
                     <button class="sortby">
                         <p>Sort by<i class="fa-solid fa-chevron-down"></i></p>
                     </button>
+                    <ul *ngFor="let filter of filters" class="items">
+                      <li>{{filter}}</li>
+                    </ul>
                 </div>
             </section>
         </div>

@@ -1,0 +1,76 @@
+<section>
+  <main>
+    <div class="cont-section-logo">
+      <div class="cont-logo">
+        <img src="../../../assets/images/logo.png" alt="company-logo" srcset="../../../assets/images/logo.png">
+      </div>
+      <h2>Mission Recycling</h2>
+    </div>
+    <form
+    [formGroup]="formEmail"  *ngIf="!codeValid" class="form-reset-email">
+      <h2>Reset your password</h2>
+      <div class="input">
+        <i class="fa-solid fa-envelope icon"></i>
+        <input type="text" id="user" placeholder=" " formControlName="email" required>
+        <label for="user">Email</label>
+      </div>
+
+      <div *ngIf="codeSend" class="input">
+        <i class="fa-solid fa-key icon"></i>
+        <input type="text" id="code" placeholder=" " formControlName="code" required>
+        <label for="code">Code Received</label>
+      </div>
+      <!--   -->
+      <div class="error">
+        <p *ngIf="formEmail.get('email')?.touched &&formEmail.get('email')?.errors?.['required']" >
+          <i  *ngIf="emailControl.errors?.['required']" class="fa-solid fa-circle-info"></i>
+          Email is required.
+        </p>
+        <p *ngIf="emailControl.errors?.['email']" >
+          <i class="fa-solid fa-circle-info"></i>
+          This is a invalid email.
+        </p>
+      </div>
+      <div class="cont-button">
+        <button (click)="getmycode()">
+          {{buttontext}}
+        </button>
+        <p *ngIf="codeSend" class="dont" (click)="resendCode()">
+          Resend the code.
+        </p>
+      </div>
+    </form>
+
+    <form *ngIf="codeValid" class="form-reset-password" [formGroup]="formReset">
+      <h2>Reset your password</h2>
+
+      <div class="input">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="{{passtype}}" id="password" placeholder=" " formControlName="password">
+        <label for="password">New password</label>
+        <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
+      </div>
+
+      <div class="input">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="{{passtype}}" id="repassword" placeholder=" " formControlName="repassword">
+        <label for="repassword">Repeat password</label>
+        <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
+      </div>
+      <div *ngIf="formReset.get('password')?.touched && formReset.get('repassword')?.touched" class="error">
+        <p  *ngIf="passControl.errors?.['required'] || repassControl.errors?.['required']">
+          <i class="fa-solid fa-circle-info"></i>
+          Passwords do not match.
+        </p>
+      </div>
+
+      <div class="cont-button">
+        <button (click)="changePassword()">
+          Change my password
+        </button>
+
+      </div>
+    </form>
+
+  </main>
+</section>

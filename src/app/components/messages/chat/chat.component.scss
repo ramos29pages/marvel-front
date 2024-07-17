@@ -4,64 +4,86 @@ $navColor: #f0f2f9;
 
 .cont-data-chat {
   background-color: $navColor;
-  // box-shadow: 0px 0px 10px 1psx rgba(0, 0, 0, 0.25);
-  border: 1px solid rgb(128, 128, 128, 0.5);
 
+  // box-shadow: 0px 0px 10px 1psx rgba(0, 0, 0, 0.25);
+  // border: 1px solid rgb(128, 128, 128, 0.5);
   width: 100%;
-  min-height: 410px;
-  max-height: 100%;
   overflow: hidden;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-rows: 40px 1fr 50px;
   display: grid;
   box-sizing: border-box;
+  // background-color: crimson;
+  height: calc(70vh - 140px);
+  border: 1px solid  rgb(128, 128, 128, 0.5);
 
   .head {
-    background-color: #7aa5f9;
+    // background-color: #7aa5f9;
+    border-bottom: 1px solid  rgb(128, 128, 128, 0.5);;
     display: flex;
     padding: 0px 20px;
     justify-content: space-between;
+    align-items: center;
+
+    .user p{
+      font-weight: bold;
+    }
+
+    .actions{
+      // background-color: crimson;
+      button{
+        background-color: transparent;
+        border: none;
+        color: $greenApp;
+        font-size: 1.2rem;
+      }
+    }
   }
 
   .messages {
-    // background-color: royalblue;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    height: 350px;
+    overflow-y: scroll;
+    background-color: white;
+
     &::-webkit-scrollbar {
-        width: 8px; /* Establece el ancho de la barra de desplazamiento */
-    }
-    
-     &::-webkit-scrollbar-thumb {
-        background-color: rgba(197, 197, 197, 0.526); /* Establece el color de la barra que se mueve */
-        border-radius: 4px; /* Añade esquinas redondeadas a la barra que se mueve */
+      width: 8px; /* Establece el ancho de la barra de desplazamiento */
     }
 
-    .box-ms {
-        // background-color: #222;
-        margin: 10px 20px;
-        
+    &::-webkit-scrollbar-thumb {
+      // background-color: rgba(
+      //   197,
+      //   197,
+      //   197,
+      //   0.526
+      // ); /* Establece el color de la barra que se mueve */
+      border-radius: 4px; /* Añade esquinas redondeadas a la barra que se mueve */
+    }
 
-        .date-box{
-            display: flex;
-            justify-content: center;
-                    p{
-                        margin: 0;
-                        width: 100px;
-                        font-size: .7rem;
-                        text-align: center;
-                        color: gray;
-                        background-color: $navColor;
-                    }
+    .box-ms-they {
+      margin: 5px;
+      padding: 8px;
+      // margin: 10px 20px;
+
+      .date-box {
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 0;
+          width: 100px;
+          font-size: 0.7rem;
+          text-align: center;
+          color: gray;
+          // background-color: $navColor;
         }
+      }
 
       .with {
         height: auto;
         gap: 10px;
         display: flex;
         .profile {
-        //   background-color: #90c129;
+          //   background-color: #90c129;
           .cont {
             background-color: #2d2d2d27;
             border: 2px solid white;
@@ -77,31 +99,112 @@ $navColor: #f0f2f9;
           }
         }
 
-        .messages{
-            font-size: 1rem;
-            color: gray;
+        .messages {
+          font-size: 1rem;
+          color: gray;
 
-            p{
-                margin: 0px;
-                // background-color: crimson;
+          p {
+            margin: 0px;
+      background-color: rgba(122, 164, 249, 0.5);
+            color: #222;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 16px;
+
+            // background-color: crimson;
+          }
+        }
+      }
+    }
+
+
+    .box-ms-me {
+      // background-color: #222;
+      margin: 5px;
+      padding: 8px;
+
+      // margin: 10px 20px;
+
+      .date-box {
+        display: flex;
+        justify-content: center;
+        p {
+          margin: 0;
+          width: 100px;
+          font-size: 0.7rem;
+          text-align: center;
+          color: gray;
+          // background-color: $navColor;
+        }
+      }
+
+      .with {
+        height: auto;
+        gap: 10px;
+        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 30px;
+        grid-template-rows: 1fr;
+        grid-template-areas: "message profile";
+
+        .profile {
+          //   background-color: #90c129;
+          grid-area: profile;
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          .cont {
+            background-color: #2d2d2d27;
+            border: 2px solid white;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+              width: 100%;
             }
+          }
+        }
+
+        .messages {
+          grid-area: message;
+          font-size: 1rem;
+          color: gray;
+
+          p {
+            margin: 0px;
+            text-align: end;
+            background-color: rgba(144, 193, 41, 0.5);
+            color: #222;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 16px;
+
+            // background-color: crimson;
+          }
         }
       }
     }
   }
 
   .footer {
-    border-top: 1px solid rgb(128, 128, 128, 0.5);
+    // border-top: 1px solid rgb(128, 128, 128, 0.5);
     display: grid;
-    grid-template-columns: 1fr 50px;
-    padding: 0px 20px;
-
+    grid-template-columns: 1fr 70px;
+    padding: 5px;
+    background-color: white;
     .cont-button {
       button {
         background-color: white;
         width: 100%;
         height: 100%;
+        font-size: 1.2rem;
         border: none;
+        background-color: $navColor;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        overflow: hidden;
 
         &:hover {
           color: #222;
@@ -116,10 +219,13 @@ $navColor: #f0f2f9;
         padding: 0px 10px;
         border: none;
         height: 100%;
-        &:focus{
-            background-color: crimson;
-            border: none;
-            inset: none;
+        background-color: $navColor;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        &:focus {
+          outline: none;
+          border: none;
+          inset: none;
         }
       }
     }

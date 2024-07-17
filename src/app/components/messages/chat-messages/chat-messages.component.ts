@@ -24,8 +24,8 @@ export class ChatMessagesComponent implements OnInit {
     'non-ferrous-metals',
   ];
   protected profileURL: string = 'https://robohash.org/none';
-  protected userCompany = 'Company';
-  protected userWorkPosition = 'Work Position';
+  protected userCompany = 'Ferrous Technologies';
+  protected userWorkPosition = 'Sales';
   protected mobile = '+57 3002554141';
   protected website = 'hhtps://missionrecycling.com/users';
   protected email = 'alguien@algo.com';
@@ -35,7 +35,7 @@ export class ChatMessagesComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       console.log('PARAMETER::::',params);
-      this.userName = params['id'];
+      this.userName = params['id'] + ' Perez';
       this.profileURL = `https://robohash.org/${this.userName}`
     });
   }

@@ -20,6 +20,7 @@ export class TokenService {
   }
 
   getToken(): string | null {
+    this.setToken('TESTS');
     return localStorage.getItem(CURRENT_TOKEN) || null;
   }
 

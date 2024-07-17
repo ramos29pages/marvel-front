@@ -6,5 +6,6 @@ export interface UserMessage {
     user: IUser,
     lastMessage: string,
     lastHour: string,
-    imgURL: string
+    imgURL: string,
+    read ?: boolean
 }

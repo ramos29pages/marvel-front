@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -10,10 +10,10 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
 
-  protected profileURL: string = 'https://robohash.org/alberto';
-  protected name: string = 'Daniel Ramos';
-  protected companyName: string = 'Mission Recycling';
-  protected isActive : boolean = true;
+  @Input() profileURL: string = 'https://robohash.org/unknown';
+  @Input() name: string = 'Unknown Name';
+  @Input() companyName: string = 'Unknown Company';
+  @Input() isActive : boolean = true;
 
   get statusClass(): string{
     return this.isActive ? 'active' : 'inactive';

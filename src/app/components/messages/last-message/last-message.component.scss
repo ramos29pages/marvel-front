@@ -4,6 +4,7 @@ $navColor: #f0f2f9;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,7 +16,7 @@ $navColor: #f0f2f9;
     display: grid;
     padding: 10px;
     margin-bottom: 10px;
-    height: auto;
+    height: 70px;
     border-radius: 15px;
     grid-template-rows: 20px 1fr;
     overflow: hidden;
@@ -27,16 +28,9 @@ $navColor: #f0f2f9;
       transition: scale 0.1s ease-in-out;
     }
 
-    .lastHour {
-      text-align: end;
-      height: 15px;
-      margin-right: 20px;
-      font-size: 0.7rem;
-      align-self: center;
-    }
-
     .user-chat {
       display: flex;
+      // background-color: crimson;
 
       .cont-profile {
         justify-self: center;
@@ -59,20 +53,45 @@ $navColor: #f0f2f9;
         width: 100%;
         display: grid;
         align-items: center;
+
         .info {
+          // background: green;
+          display: flex;
+          justify-content: space-between;
+          height: 36px;
+          position: relative;
+
+          p:nth-child(1) {
+            font-weight: bold;
+          }
+          p:nth-child(2) {
+            // background-color: royalblue;
+            font-size: .8rem;
+          }
+
+          .notification{
+            position: absolute;
+            right: 8px;
+            font-size: .7rem;
+            padding: 2px;
+            color: white;
+            border-radius: 50%;
+            bottom: -16px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: $blueApp;
+          }
         }
 
-        p:nth-child(1) {
-          font-weight: bold;
-        }
-
-        p:nth-child(2) {
+        .lastMessage {
           color: gray;
           font-size: 0.8rem;
-          width: 95%;
+          width: 80%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+      // background-color: crimson;
         }
       }
     }

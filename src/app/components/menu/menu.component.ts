@@ -10,5 +10,6 @@ import { MenuButtonComponent } from '../menu-button/menu-button.component';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
+notification: any;
 
 }

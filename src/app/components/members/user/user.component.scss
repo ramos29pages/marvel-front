@@ -9,19 +9,19 @@ $navColor: #f0f4f9;
 }
 
 .user {
-  width: 250px;
-  height: 250px;
+  width: 140px;
+  height: 140px;
   border-radius: 15px;
   background-color: $navColor;
+  // background-color: crimson;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 80px 40px;
   display: grid;
 
   .cont-profile {
     margin-top: 20px;
     justify-self: center;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -30,11 +30,11 @@ $navColor: #f0f4f9;
     &::after {
       content: "";
       position: absolute;
-      top: 10px;
-      right: 13px;
+      top: 8px;
+      right: 6px;
       transform: translate(50%, -50%);
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: crimson;
       border: 1px solid white;
@@ -51,6 +51,8 @@ $navColor: #f0f4f9;
     img {
       width: 100%;
       object-fit: cover;
+      overflow: hidden;
+      border-radius: 50%;
     }
   }
 
@@ -60,20 +62,21 @@ $navColor: #f0f4f9;
 
     .name {
       font-weight: bold;
+      font-size: .8rem;
       padding: 0px;
       margin: 0px;
     }
 
     .company {
       margin: 0px;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       color: gray;
     }
   }
 
   .cont-actions {
     width: 100%;
-    height: 40px;
+    height: 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: white;

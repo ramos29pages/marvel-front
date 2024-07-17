@@ -4,6 +4,7 @@ $navColor: #f0f2f9;
 
 .profile {
   grid-area: profile;
+  margin-bottom: 16px;
 
   .cont-data-profile {
     // box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
@@ -25,6 +26,8 @@ $navColor: #f0f2f9;
       .cont-img-profile {
         background-color: rgba(205, 205, 205, 0.8);
         height: 15vh;
+        display: flex;
+        justify-content: center;
         width: 100px;
         // box-shadow: 140px 0px 40px 15px rgba(0, 0, 0, 0.76);
 
@@ -82,6 +85,11 @@ $navColor: #f0f2f9;
       }
 
       .cont-icon-categories {
+        // background-color: crimson;
+        margin: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img {
           width: 25px;
           margin-right: 2px;

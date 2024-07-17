@@ -11,21 +11,18 @@
       <td class="cont-profile">
         <div class="cont-img-profile">
           <div class="cont">
-            <!-- Asegúrate de que la propiedad profileURL exista en tus objetos de usuario -->
             <img [src]="user.profileURL" alt="profile image">
           </div>
         </div>
       </td>
 
       <td class="info-profile">
-        <!-- La interpolación se hace directamente con las llaves dobles {{ }} -->
         <p class="username">{{ user.name + ' ' + user.surname }}</p>
         <p class="company-name">{{ user.company }}</p>
         <p class="work-position">{{ user.workPosition }}</p>
       </td>
 
       <td class="country">
-        <!-- Utiliza la vinculación de propiedades para src y srcset -->
         <img [src]="'https://flagcdn.com/w20/' +  user.flag +'.png'"
              [srcset]="'https://flagcdn.com/w40/' +  user.flag +'.png'"
              width="20" alt="{{ user.country }}">
@@ -33,7 +30,6 @@
 
       <td class="categories">
         <div class="cont-icon-categories">
-          <!-- Asegúrate de que la propiedad categories exista y sea un array en tus objetos de usuario -->
           <img *ngFor="let ctg of user.categories" [src]="'../../../assets/icons/categories/' + ctg + '.png'" alt="">
         </div>
       </td>
