@@ -10,7 +10,7 @@
       <h2>Login</h2>
       <div  [ngClass]="{ input: form, errorinput : user?.invalid && (user?.dirty || user?.touched)}">
         <i class="fa-solid fa-user icon"></i>
-        <input type="text" id="user" placeholder=" " formControlName="user" required>
+        <input type="text" id="user" placeholder="username" formControlName="user" required>
         <label for="user">Username</label>
       </div>
       <!--   -->
@@ -34,7 +34,7 @@
       </div>
       <div class="cont-button">
         <p (click)="forgotPassword()" class="forgot">Forgot your password?</p>
-        <button>
+        <button (click)="goToDash()">
           Login
         </button>
         <p (click)="joinTheEvent()" class="dont">

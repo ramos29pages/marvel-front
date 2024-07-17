@@ -12,6 +12,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators } 
 })
 export class LoginComponent {
 
+
+
   form: FormGroup = new FormGroup({
     user: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -31,6 +33,10 @@ export class LoginComponent {
 
   get password() {
     return this.form.get('password');
+  }
+
+  goToDash() {
+    this.router.navigate(['dashboard/home']);
   }
 
   joinTheEvent() {
