@@ -15,7 +15,7 @@ const MOCK_USERS: Array<IUser> = [
     company: 'Plastics SAS',
     workPosition: 'CEO Plastics SAS',
     profileURL: '../../../assets/images/ph1.jpg',
-    categories: ['electrics-electronics', 'ferrous-metals', 'non-ferrous-metals'],
+    categories: ['electrics-electronics', 'ferrous-metals', 'non-ferrous-metals', 'paper', 'plastic', 'special-alloys', 'stainless-steel', 'textile', 'tyres-rubber'],
     country: 'colombia'
   },
   {

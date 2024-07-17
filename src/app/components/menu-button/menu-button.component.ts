@@ -16,7 +16,7 @@ export class MenuButtonComponent implements OnInit{
   @Input() iconClass : string = '';
   @Input() notification : boolean = false;
 
-  notifications = 37
+  notifications = 99
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 

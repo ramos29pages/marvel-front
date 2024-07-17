@@ -99,6 +99,7 @@ $navColor: #f0f4f9;
       .categories {
         text-align: center;
 
+
         .cont-icon-categories {
           img {
             width: 15px;
@@ -113,22 +114,22 @@ $navColor: #f0f4f9;
           min-width: 100%;
           min-height: 100%;
           display: flex;
-          gap: 8px;
+          gap: 5px;
           justify-content: center;
 
           .btn-chat {
             background-color: $greenApp;
             color: white;
             font-weight: bold;
-            font-size: 0.8rem;
-            width: 30px;
-            min-width: 30px;
-            height: 30px;
+            font-size: 0.7rem;
+            width: 25px;
+            min-width: 25px;
+            height: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             p {
               display: none;
             }
@@ -138,10 +139,10 @@ $navColor: #f0f4f9;
             background-color: $blueApp;
             color: white;
             font-weight: bold;
-            font-size: 0.8rem;
-            min-width: 30px;
-            width: 30px;
-            height: 30px;
+            font-size: 0.7rem;
+            min-width: 25px;
+            width: 25px;
+            height: 25px;
             display: flex;
             align-items: center;
             justify-content: center;

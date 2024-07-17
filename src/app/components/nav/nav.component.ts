@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
-  protected username : string = 'Daniel Ramos';
+  protected username : string = 'Daniel';
   protected imageProfileURL: string = '../../';
   protected logoURL: string = '../../';
   protected isAutenticated$;

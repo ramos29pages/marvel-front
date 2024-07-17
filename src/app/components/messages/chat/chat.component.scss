@@ -13,24 +13,24 @@ $navColor: #f0f2f9;
   display: grid;
   box-sizing: border-box;
   // background-color: crimson;
-  height: calc(70vh - 140px);
-  border: 1px solid  rgb(128, 128, 128, 0.5);
+  height: calc(70vh - 150px);
+  border: 1px solid rgb(128, 128, 128, 0.5);
 
   .head {
     // background-color: #7aa5f9;
-    border-bottom: 1px solid  rgb(128, 128, 128, 0.5);;
+    border-bottom: 1px solid rgb(128, 128, 128, 0.5);
     display: flex;
     padding: 0px 20px;
     justify-content: space-between;
     align-items: center;
 
-    .user p{
+    .user p {
       font-weight: bold;
     }
 
-    .actions{
+    .actions {
       // background-color: crimson;
-      button{
+      button {
         background-color: transparent;
         border: none;
         color: $greenApp;
@@ -99,24 +99,31 @@ $navColor: #f0f2f9;
           }
         }
 
-        .messages {
+        .cont-messages {
           font-size: 1rem;
           color: gray;
 
           p {
             margin: 0px;
-      background-color: rgba(122, 164, 249, 0.5);
+            background-color: rgba(122, 164, 249, 0.5);
             color: #222;
-      margin: 5px;
-      padding: 8px;
-      border-radius: 16px;
+            margin: 5px;
+            padding: 8px;
+            border-radius: 16px;
 
             // background-color: crimson;
+            display: grid;
+
+            span:nth-child(2){
+              // background-color: cadetblue;
+              font-size: .7rem;
+              text-align: end;
+              color: #222;
+            }
           }
         }
       }
     }
-
 
     .box-ms-me {
       // background-color: #222;
@@ -125,30 +132,15 @@ $navColor: #f0f2f9;
 
       // margin: 10px 20px;
 
-      .date-box {
-        display: flex;
-        justify-content: center;
-        p {
-          margin: 0;
-          width: 100px;
-          font-size: 0.7rem;
-          text-align: center;
-          color: gray;
-          // background-color: $navColor;
-        }
-      }
-
       .with {
         height: auto;
         gap: 10px;
-        display: flex;
         display: grid;
-        grid-template-columns: 1fr 30px;
+        grid-template-columns: 1fr 40px;
         grid-template-rows: 1fr;
         grid-template-areas: "message profile";
 
         .profile {
-          //   background-color: #90c129;
           grid-area: profile;
           display: flex;
           flex-direction: column;
@@ -167,21 +159,31 @@ $navColor: #f0f2f9;
           }
         }
 
-        .messages {
-          grid-area: message;
+        .cont-messages {
           font-size: 1rem;
           color: gray;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          // background-color: aquamarine;
 
           p {
             margin: 0px;
-            text-align: end;
             background-color: rgba(144, 193, 41, 0.5);
             color: #222;
-      margin: 5px;
-      padding: 8px;
-      border-radius: 16px;
-
+            margin: 5px;
+            padding: 8px;
+            border-radius: 16px;
+            width: fit-content;
+            display: grid;
             // background-color: crimson;
+
+            span:nth-child(2){
+              // background-color: cadetblue;
+              font-size: .7rem;
+              text-align: end;
+              color: #222;
+            }
           }
         }
       }

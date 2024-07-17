@@ -11,14 +11,17 @@ $navColor: #f0f2f9;
     height: 100%;
     // background-color: crimson;
 
-    .title {
-    //   background-color: rgb(102, 120, 172);
+
+    .cont-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+      // background-color: royalblue;
 
       p{
-        padding-bottom: 10px;
         font-size: 1.2rem;
         font-weight: bold;
-        border-bottom: 1px solid gray;
       }
 
     }

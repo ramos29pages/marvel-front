@@ -5,6 +5,7 @@ $navColor: #f0f2f9;
 .profile {
   grid-area: profile;
   margin-bottom: 16px;
+  // background-color: crimson;
 
   .cont-data-profile {
     // box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
@@ -22,6 +23,8 @@ $navColor: #f0f2f9;
       align-items: center;
       background-size: cover;
       background-repeat: no-repeat;
+  // background-color: crimson;
+
 
       .cont-img-profile {
         background-color: rgba(205, 205, 205, 0.8);
@@ -29,6 +32,7 @@ $navColor: #f0f2f9;
         display: flex;
         justify-content: center;
         width: 100px;
+        min-width: 100px;
         // box-shadow: 140px 0px 40px 15px rgba(0, 0, 0, 0.76);
 
         img {
@@ -40,16 +44,17 @@ $navColor: #f0f2f9;
       .data {
         margin-left: 10px;
         align-self: flex-start;
-        margin-top: 15px;
+        margin-top: -10px;
         color: white;
         position: relative;
         p:nth-child(1) {
           margin: 0px;
           font-weight: bold;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           // color: #2f2f2f;
         }
         p:nth-child(2) {
+          color: #f0f2f9;
           margin: 0px;
           font-size: 0.8rem;
           font-weight: bold;
@@ -76,7 +81,7 @@ $navColor: #f0f2f9;
       background-color: $navColor;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 0px 20px;
 
       p {
@@ -91,7 +96,7 @@ $navColor: #f0f2f9;
         justify-content: center;
         align-items: center;
         img {
-          width: 25px;
+          width: 20px;
           margin-right: 2px;
         }
       }

@@ -5,7 +5,7 @@
         </div>
         <div class="info-user-message">
             <div class="info">
-                <p class="username-chat">{{ ms.user.name }}</p>
+                <p class="username-chat">{{ ms.user.name + ' '+ms.user.surname}}</p>
                 <p class="lastHour">{{ ms.lastHour }}</p>
                 <p *ngIf="ms.read" class="notification">
                   {{messagesNoRead}}

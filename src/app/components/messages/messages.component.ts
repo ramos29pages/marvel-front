@@ -51,7 +51,7 @@ export class MessagesComponent {
     {
     id: 1,
     user: this.user1,
-    lastHour: "8:15am",
+    lastHour: "15:50",
     lastMessage: "Thank you 😊",
     imgURL: "https://robohash.org/alberto",
     read : true
@@ -59,7 +59,7 @@ export class MessagesComponent {
   {
     id: 2,
     user: this.user2,
-    lastHour: "8:35am",
+    lastHour: "15:40",
     lastMessage: "We can take a look at",
     imgURL: "https://robohash.org/hernestico",
     read: false
@@ -67,7 +67,7 @@ export class MessagesComponent {
   {
     id: 2,
     user: this.user2,
-    lastHour: "8:35am",
+    lastHour: "15:20",
     lastMessage: "Yes, it´s perfect for me, we can to try some dee",
     imgURL: "https://robohash.org/hernestico",
     read : true
@@ -75,14 +75,14 @@ export class MessagesComponent {
   {
     id: 2,
     user: this.user2,
-    lastHour: "8:35am",
+    lastHour: "14:00",
     lastMessage: "lorem Ipsum",
     imgURL: "https://robohash.org/hernestico"
   },
   {
     id: 2,
     user: this.user2,
-    lastHour: "8:35am",
+    lastHour: "1:00",
     lastMessage: "lorem Ipsum",
     imgURL: "https://robohash.org/hernestico",
     read : true
@@ -90,7 +90,7 @@ export class MessagesComponent {
     {
     id: 1,
     user: this.user1,
-    lastHour: "8:15am",
+    lastHour: "12:57",
     lastMessage: "Lorem Ipsum",
     imgURL: "https://robohash.org/alberto",
     read : true
@@ -99,14 +99,14 @@ export class MessagesComponent {
   {
     id: 2,
     user: this.user2,
-    lastHour: "8:35am",
+    lastHour: "yesterday",
     lastMessage: "lorem Ipsum",
     imgURL: "https://robohash.org/hernestico"
   },
     {
     id: 1,
     user: this.user1,
-    lastHour: "8:15am",
+    lastHour: "yesterday",
     lastMessage: "Lorem Ipsum",
     imgURL: "https://robohash.org/alberto"
   },
