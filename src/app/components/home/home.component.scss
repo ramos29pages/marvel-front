@@ -64,12 +64,13 @@ section {
   display: flex;
   align-items: center;
   background: $navColor;
+  // background-color: crimson;
 }
 
 .content {
   grid-area: content;
   overflow:hidden;
-  max-height: calc(100vh - 130px);
+  max-height: 100vh;
   padding: 10px 20px 0px 20px;
   // background-color: coral;
 }

@@ -3,7 +3,7 @@ $navColor: #f0f4f9;
 section {
   background-color: rgb(23, 39, 87);
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px);
   overflow-x: hidden;
   display: grid;
   grid-template-areas: "nav" "content" "menu";
