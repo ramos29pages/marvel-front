@@ -6,7 +6,7 @@ $navColor: #f0f4f9;
   // background-color: crimson;
   height: 100%;
   padding: 0px 18px;
-  overflow-y: scroll;
+
 
   table {
     width: 100%;
@@ -32,7 +32,7 @@ $navColor: #f0f4f9;
 
     tr {
       max-height: 50px;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 
       &:hover {
         background-color: #2d2d2d18;

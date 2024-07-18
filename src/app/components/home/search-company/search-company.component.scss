@@ -8,16 +8,19 @@ $navColor: #f0f4f9;
   margin-bottom: 10px;
   box-sizing: border-box;
   background-color: white;
-  overflow: hidden;
   // background: rgb(100, 14, 31);
 
 
   .users {
-    display: grid;
-    overflow: hidden;
-    background-color: white;
+
     // background-color: crimson;
+    overflow-y: scroll;
+    height:calc(80vh - 80px);
+    display: flex;
+    flex-direction: column;
     max-height: 100%; //LARGO DE LA TABLA
+
+
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -25,6 +28,12 @@ $navColor: #f0f4f9;
     &::-webkit-scrollbar-thumb {
       background-color: #2d2d2d19;
       border-radius: 8px;
+    }
+
+    .user{
+      background-color: crimson;
+      padding: 20px;
+      margin: 5px;
     }
 
   }

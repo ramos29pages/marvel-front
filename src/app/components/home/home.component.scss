@@ -68,13 +68,13 @@ section {
   z-index: 1000;
   display: flex;
   align-items: center;
-  background-color: crimson;
+  background-color:$navColor;
 }
 
 .content {
   grid-area: content;
-  overflow:hidden;
-  max-height: 100vh;
+  overflow: hidden;
+  max-height: calc(100vh - 130px);
   padding: 10px 20px 0px 20px;
   // background-color: coral;
 }

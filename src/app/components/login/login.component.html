@@ -6,30 +6,42 @@
       </div>
       <h2>Mission Recycling</h2>
     </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form">
       <h2>Login</h2>
-      <div  [ngClass]="{ input: form, errorinput : user?.invalid && (user?.dirty || user?.touched)}">
+      <div  [ngClass]="{ input: form, errorinput : user?.invalid && (user?.dirty || user?.touched || loginUsernameFailed) }">
         <i class="fa-solid fa-user icon"></i>
-        <input type="text" id="user" placeholder="username" formControlName="user" required>
+        <input type="text" id="user" placeholder=" " formControlName="user" required>
         <label for="user">Username</label>
       </div>
       <!--   -->
-      <div *ngIf="user?.invalid && (user?.dirty || user?.touched)" class="error">
+      <div *ngIf="user?.invalid && (user?.dirty || user?.touched || loginUsernameFailed)" class="error">
         <p>
           <i class="fa-solid fa-circle-info"></i>
-          Username is required.
+          {{errorUsername}}
         </p>
       </div>
-      <div [ngClass]="{ input: form, errorinput : password?.invalid && (password?.dirty || password?.touched)}">
+      <div *ngIf="user?.valid && userValidation" class="error">
+        <p>
+          <i class="fa-solid fa-circle-info"></i>
+          {{userValidationError}}
+        </p>
+      </div>
+      <div [ngClass]="{ input: form, errorinput : password?.invalid && (password?.dirty || password?.touched || loginPasswordFailed)}">
         <i class="fa-solid fa-lock icon"></i>
         <input type="{{passtype}}" id="password" placeholder=" " formControlName="password">
         <label for="password">Password</label>
         <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
       </div>
-      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched || loginPasswordFailed)" class="error">
         <p>
           <i class="fa-solid fa-circle-info"></i>
-          Password is required.
+          {{errorPassword}}
+        </p>
+      </div>
+      <div *ngIf="password?.valid && passwordValidation" class="error">
+        <p>
+          <i class="fa-solid fa-circle-info"></i>
+          {{passwordValidationError}}
         </p>
       </div>
       <div class="cont-button">
