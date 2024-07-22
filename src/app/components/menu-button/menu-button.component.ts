@@ -12,7 +12,7 @@ import { CapitalizePipe } from '../../shared/pipes/capitalize.pipe';
 })
 export class MenuButtonComponent implements OnInit{
   @Input() routerLink : string = 'members';
-  @Input() label : string = 'Members';
+  @Input() label : string | null = null;
   @Input() iconClass : string = '';
   @Input() notification : boolean = false;
 
