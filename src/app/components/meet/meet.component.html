@@ -1,0 +1,15 @@
+<div class="meet-container">
+  <div class="actions">
+    <button (click)="endMeeting()">
+      <i class="fa-solid fa-phone"></i>
+    </button>
+    <button (click)="mute()">
+      <i class="fa-solid fa-microphone-slash"></i>
+    </button>
+  </div>
+  <div class="muted">
+    
+  </div>
+  <video id="localVideo" class="small-screen draggable" autoplay muted playsinline></video>
+  <video id="remoteVideo" class="full-screen" autoplay playsinline></video>
+</div>

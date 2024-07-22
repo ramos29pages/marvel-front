@@ -1,3 +1,4 @@
+import { MeetComponent } from './components/meet/meet.component';
 import { SearchCompanyComponent } from './components/home/search-company/search-company.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LoginComponent } from './components/login/login.component';
@@ -57,6 +58,12 @@ export const routes: Routes = [
       {
         path: 'account',
         component: AccountComponent,
+        canActivate: [authGuard]
+
+      },
+      {
+        path: 'meet',
+        component: MeetComponent,
         canActivate: [authGuard]
 
       },

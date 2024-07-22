@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -10,13 +10,17 @@ import { Component, Input } from '@angular/core';
 })
 export class ChatComponent {
   @Input() name !: string;
+  protected iconURL: string = '../../assets/icons/home.svg';
 
-  constructor(private route: ActivatedRoute){
+  constructor(private route: ActivatedRoute,private router: Router){
   }
 
   ngOnInit(): void {
     this.name = this.route.snapshot.paramMap.get('id') || '';
   }
 
-  protected iconURL: string = '../../assets/icons/home.svg';
+  meet(){
+    this.router.navigate(['dashboard/meet',]);
+  }
+
 }

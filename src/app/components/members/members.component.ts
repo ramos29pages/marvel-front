@@ -15,6 +15,7 @@ import { IUser } from '../../models/user';
 export class MembersComponent implements OnInit {
 
   userService = inject(UsersService);
+  title: string = 'Members Online';
 
   users : Array<IUser> = [];
 
