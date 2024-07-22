@@ -1,40 +1,31 @@
 <div class="cont-table">
-  <table>
-    <tr class="headd">
-      <th></th>
-      <th>Info Members</th>
-      <th>Country</th>
-      <th>Categories</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let user of users">
-      <td class="cont-profile">
+  <main>
+    <article *ngFor="let user of users">
+      <div class="cont-profile">
         <div class="cont-img-profile">
           <div class="cont">
             <img [src]="user.profileURL" alt="profile image">
           </div>
         </div>
-      </td>
+      </div>
 
-      <td class="info-profile">
+
+      <div class="info-profile categories">
         <p class="username">{{ user.name + ' ' + user.surname }}</p>
-        <p class="company-name">{{ user.company }}</p>
+        <p class="company-name">
+          <img
+          [src]="'https://flagcdn.com/w20/' +  user.flag +'.png'"
+          [srcset]="'https://flagcdn.com/w40/' +  user.flag +'.png'"
+          width="20" alt="{{ user.country }}">
+          {{ user.company }}
+        </p>
         <p class="work-position">{{ user.workPosition }}</p>
-      </td>
-
-      <td class="country">
-        <img [src]="'https://flagcdn.com/w20/' +  user.flag +'.png'"
-             [srcset]="'https://flagcdn.com/w40/' +  user.flag +'.png'"
-             width="20" alt="{{ user.country }}">
-      </td>
-
-      <td class="categories">
         <div class="cont-icon-categories">
           <img *ngFor="let ctg of user.categories" [src]="'../../../assets/icons/categories/' + ctg + '.png'" alt="">
         </div>
-      </td>
+      </div>
 
-      <td class="actions">
+      <div class="actions">
         <div class="cont-actions">
           <button class="btn-view">
             <p>View Profile</p>
@@ -45,7 +36,7 @@
             <i class="fa-solid fa-comments"></i>
           </button>
         </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </article>
+  </main>
 </div>
