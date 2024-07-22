@@ -43,10 +43,14 @@ $navColor: #f0f2f9;
 
       .data {
         margin-left: 10px;
-        align-self: flex-start;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         margin-top: -10px;
         color: white;
         position: relative;
+        // background: crimson;
         p:nth-child(1) {
           margin: 0px;
           font-weight: bold;
@@ -56,12 +60,12 @@ $navColor: #f0f2f9;
         p:nth-child(2) {
           color: #f0f2f9;
           margin: 0px;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           font-weight: bold;
         }
         p:nth-child(3) {
           margin: 0px;
-          font-size: 0.7rem;
+          font-size: 0.9rem;
         }
         p:nth-child(4) {
           margin: 0px;
@@ -81,12 +85,12 @@ $navColor: #f0f2f9;
       background-color: $navColor;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       padding: 0px 20px;
 
       p {
         font-weight: bold;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
 
       .cont-icon-categories {

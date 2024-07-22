@@ -42,6 +42,10 @@
 
 @import "../../../variables";
 
+// Define variables for the safe area insets
+$safe-area-inset-top: env(safe-area-inset-top);
+$safe-area-inset-bottom: env(safe-area-inset-bottom);
+
 section {
   // background-color: rgb(23, 39, 87);
   width: 100vw;
@@ -75,7 +79,10 @@ section {
   grid-area: content;
   overflow: hidden;
   max-height: calc(100vh - 130px);
-  padding: 10px 20px 0px 20px;
+  height: calc(100vh - #{$safe-area-inset-top} - #{$safe-area-inset-bottom});
+  padding-top: $safe-area-inset-top;
+  padding-bottom: $safe-area-inset-bottom;
+  // padding: 10px 20px 0px 20px;
   // background-color: coral;
 }
 

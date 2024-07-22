@@ -18,10 +18,15 @@ export class ChatMessagesComponent implements OnInit {
   protected userCountryFlag = 'it';
   protected country = 'Italia';
   protected userCategories: string[] = [
-    'plastic',
-    'stainless-steel',
-    'paper',
+    'electrics-electronics',
+    'ferrous-metals',
     'non-ferrous-metals',
+    'paper',
+    'plastic',
+    'special-alloys',
+    'stainless-steel',
+    'textile',
+    'tyres-rubber'
   ];
   protected profileURL: string = 'https://robohash.org/none';
   protected userCompany = 'Ferrous Technologies';
