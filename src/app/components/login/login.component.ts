@@ -1,6 +1,9 @@
+import { AuthService } from './../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { io } from 'socket.io-client';
 import {
   FormControl,
   FormGroup,
@@ -22,19 +25,25 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  hide = false;
   eye = 'fa-solid fa-eye';
   passtype = 'password';
-  loginUsernameFailed = false;
   userValidationError = 'Username does not exist';
-  userValidation = false
   passwordValidationError = 'Password is incorrect';
-  passwordValidation = false
-  loginPasswordFailed = false;
   errorUsername = 'Username is required';
   errorPassword = 'Password is required';
+  hide = false;
+  loginUsernameFailed = false;
+  showUserValidationError = false;
+  showPasswordValidationError = false;
+  loginPasswordFailed = false;
+  login = false;
+  validUsername = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   get user() {
     return this.form.get('user');
@@ -45,23 +54,21 @@ export class LoginComponent {
   }
 
   goToDash() {
-
-    if (this.user?.invalid){
+    if (this.user?.invalid) {
       this.loginUsernameFailed = true;
     }
 
-    if (this.user?.invalid){
+    if (this.user?.invalid) {
       this.loginPasswordFailed = true;
     }
 
     if (this.user?.valid) {
-      this.userValidation = !this.validateUsername(this.user?.value);
+      this.validateUsername(this.user?.value);
     }
 
     if (this.password?.valid) {
-      this.passwordValidation = !this.validatePassword(this.password?.value);
+      this.validateLogin(this.user?.value, this.password?.value);
     }
-
 
     // if (this.password?.valid && this.validatePassword(this.password?.value)) {
     //   this.loginPasswordFailed = false;
@@ -71,26 +78,62 @@ export class LoginComponent {
       this.form.valid &&
       this.user?.valid &&
       this.password?.valid &&
-      this.validateUsername(this.user?.value) &&
-      this.validatePassword(this.password?.value)
+      this.showUserValidationError == false &&
+      this.login
     ) {
-      this.router.navigate(['dashboard/home']);
+      // this.router.navigate(['dashboard/home']);
+      console.log('go to dash');
+
+      const socket = io('http://localhost:3000');
+      console.log('YOU HAVE LOGGED IN'), socket.id;
+
+      socket.emit('register', '2001');
+
+      socket.emit('private_message', {
+        receiverId: 2000,
+        message: 'MENSAJE DESDE ANGULAR',
+      });
     }
   }
 
-  validateUsername(value: string): boolean {
-    if (this.user?.value == 'test') {
-      return true;
+  validateUsername(value: string): void {
+    if (value.length > 1) {
+      this.authService.validateUsername(value).subscribe({
+        next: (isValid) => {
+          console.log('Userme is valid:: ', isValid);
+          this.showUserValidationError = !isValid;
+        },
+        error: (error) => {
+          console.error('VALIDATE-USERNAME-ERROR::', error);
+          this.showUserValidationError = true;
+        }
+    });
     } else {
-      return false;
+      this.showUserValidationError = true;
     }
   }
 
-  validatePassword(value: string): boolean {
-    if (this.password?.value == 'test') {
-      return true;
+  validateLogin(username: string, password: string): void {
+    this.validateUsername(username);
+
+    if (this.showUserValidationError == false) {
+      this.authService.login(username, password).subscribe({
+        next:(isLoginSuccessful) => {
+          if (!isLoginSuccessful) {
+            this.showPasswordValidationError = true; // La contraseña es incorrecta
+          }
+          this.login = true;
+          this.showPasswordValidationError = false; // La contraseña es correcta
+          //danielramos9991@gmail.com
+        },
+        error: (error) => {
+          console.error('LOGIN::', error);
+          this.login = false;
+          this.showPasswordValidationError = true;
+        }
+      });
     } else {
-      return false;
+      console.error('Username validation failed.');
     }
   }
 
@@ -106,13 +149,5 @@ export class LoginComponent {
     this.hide = this.hide ? false : true;
     this.eye = this.hide ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
     this.passtype = this.passtype == 'password' ? 'text' : 'password';
-  }
-
-  onSubmit() {
-    if (this.form.invalid) {
-      // Aquí puedes manejar el caso cuando el formulario es inválido.
-      alert('Por favor, completa todos los campos obligatorios.');
-    }
-    // Aquí manejas el envío del formulario cuando es válido.
   }
 }

@@ -1,3 +1,4 @@
+import { MessagesComponent } from './../components/messages/messages.component';
 export interface IUserAuth {
   id: number;
   email: string;
@@ -9,7 +10,8 @@ export interface ILogin {
   password: string;
 }
 
-export interface IResponse {
-  access_token: string;
-  refresh_token: string;
+export interface ILoginResponse {
+  status: boolean;
+  message: string;
+  token ?: string;
 }

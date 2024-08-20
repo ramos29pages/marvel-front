@@ -20,7 +20,7 @@
           {{errorUsername}}
         </p>
       </div>
-      <div *ngIf="user?.valid && userValidation" class="error">
+      <div *ngIf="user?.valid && showUserValidationError" class="error">
         <p>
           <i class="fa-solid fa-circle-info"></i>
           {{userValidationError}}
@@ -38,7 +38,7 @@
           {{errorPassword}}
         </p>
       </div>
-      <div *ngIf="password?.valid && passwordValidation" class="error">
+      <div *ngIf="password?.valid && showPasswordValidationError" class="error">
         <p>
           <i class="fa-solid fa-circle-info"></i>
           {{passwordValidationError}}
