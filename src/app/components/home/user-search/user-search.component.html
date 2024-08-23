@@ -10,7 +10,7 @@
       </div>
 
 
-      <div class="info-profile categories">
+      <div class="info-profile">
         <p class="username">{{ user.name + ' ' + user.surname }}</p>
         <p class="company-name">
           <img
@@ -24,6 +24,7 @@
           <img *ngFor="let ctg of user.categories" [src]="'../../../assets/icons/categories/' + ctg + '.png'" alt="">
         </div>
       </div>
+
 
       <div class="actions">
         <div class="cont-actions">

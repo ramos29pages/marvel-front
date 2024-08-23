@@ -7,10 +7,9 @@ $navColor: #f0f4f9;
   height: 100%;
   padding: 0px;
 
-
   main {
     width: 100%;
-    // background-color: royalblue;
+    background-color: white;
     border: none;
 
     article {
@@ -54,6 +53,7 @@ $navColor: #f0f4f9;
       .info-profile {
         min-width: 100px;
         flex-grow: 1;
+        text-align: start;
 
 
         p {
@@ -72,7 +72,7 @@ $navColor: #f0f4f9;
           color: #2d2d2d;
           font-weight: bold;
 
-          img{
+          img {
             width: 17px;
             height: 12px;
           }
@@ -82,11 +82,6 @@ $navColor: #f0f4f9;
           font-size: 0.8rem;
           color: #222;
         }
-      }
-
-      .categories {
-        text-align: start;
-
 
         .cont-icon-categories {
           img {
@@ -94,7 +89,51 @@ $navColor: #f0f4f9;
             margin-right: 2px;
           }
         }
+
+
+        @media screen and (min-width: 900px) {
+
+          background-color: white;
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr 1fr 100px;
+          justify-content: center;
+          align-items: center;
+          color: white;
+
+          p {
+          }
+
+          .username {
+            font-size: 1.1rem;
+          }
+
+          .company-name {
+            font-size: 1rem;
+            color: #2d2d2d;
+            font-weight: bold;
+
+            img {
+              margin-left: 5px;
+              width: 25px;
+              height: 17px;
+            }
+          }
+
+          .work-position {
+            font-size: 1rem;
+            color: #222;
+          }
+
+          .cont-icon-categories {
+            img {
+              width: 1.5rem;
+              margin-right: 2px;
+            }
+          }
+        }
       }
+
 
       .actions {
         padding: 5px;
@@ -127,7 +166,7 @@ $navColor: #f0f4f9;
             background-color: $blueApp;
             color: white;
             font-weight: bold;
-            font-size: .9rem;
+            font-size: 0.9rem;
             min-width: 35px;
             width: 35px;
             height: 35px;
@@ -141,7 +180,66 @@ $navColor: #f0f4f9;
             }
           }
         }
-      }
+
+        //TABLETS
+        @media screen and (min-width: 768px) {
+          .cont-actions {
+          background-color: white;
+            flex-direction: column-reverse;
+            .btn-chat {
+              background-color: $greenApp;
+              width: 100px;
+              border-radius: 15px;
+              transition: all ease-in .1s;
+
+              &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+              transition: all ease-in .2s;
+
+              }
+
+              i {
+                display: none;
+              }
+
+              p {
+                display: block;
+              }
+            }
+
+            .btn-view {
+              background-color: $blueApp;
+              width: 100px;
+              border-radius: 15px;
+
+              transition: all ease-in .1s;
+
+              &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+              transition: all ease-in .2s;
+
+              }
+
+              i {
+                display: none;
+              }
+
+              p {
+                display: block;
+              }
+            }
+          }
+        }
+
+
+        //LAPTOPS
+
+
+
+
+      } //-ACTIONS
     }
   }
 }

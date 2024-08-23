@@ -5,6 +5,7 @@
     </div>
 
     <form class="form-cont-filters">
+
         <div class="cont-input-filters">
             <div class="filters">
 
@@ -16,11 +17,12 @@
                 <div class="icon-filter">
                   <i class="fa-solid fa-filter"></i>
                 </div>
+
                <!-- CONTENEDOR DE FILTROS DE CAT Y COUNTRY -->
                 <div class="ccfilters">
                   <div class="ccfilter">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <select #countrySelect class="btn-filter">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <select #countrySelect class="btn-filter"  id="country-select">
                       <option value="default">Country</option>
                       <option value="co">Colombia</option>
                       <option value="us">United States</option>
@@ -30,13 +32,10 @@
                   </div>
 
                   <div class="ccfilter">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <select class="btn-filter" id="country-select">
-                      <option value="default">Country</option>
-                      <option value="co">Colombia</option>
-                      <option value="us">United States</option>
-                      <option value="ca">Canada</option>
-                      <option value="mx">Mexico</option>
+                    <i class="fa-solid fa-list"></i>
+                    <select class="btn-filter">
+                      <option value="default">Categories</option>
+
                     </select>
                   </div>
                 </div>
