@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { io } from 'socket.io-client';
 import {
   FormControl,
   FormGroup,
@@ -54,88 +53,48 @@ export class LoginComponent {
   }
 
   goToDash() {
-    if (this.user?.invalid) {
-      this.loginUsernameFailed = true;
-    }
-
-    if (this.user?.invalid) {
-      this.loginPasswordFailed = true;
-    }
-
-    if (this.user?.valid) {
-      this.validateUsername(this.user?.value);
-    }
-
-    if (this.password?.valid) {
+    if (this.form.valid) {
       this.validateLogin(this.user?.value, this.password?.value);
-    }
-
-    // if (this.password?.valid && this.validatePassword(this.password?.value)) {
-    //   this.loginPasswordFailed = false;
-    // }
-
-    if (
-      this.form.valid &&
-      this.user?.valid &&
-      this.password?.valid &&
-      this.showUserValidationError == false &&
-      this.login
-    ) {
-      // this.router.navigate(['dashboard/home']);
-      console.log('go to dash');
-
-      const socket = io('http://localhost:3000');
-      console.log('YOU HAVE LOGGED IN'), socket.id;
-
-      socket.emit('register', '2001');
-
-      socket.emit('private_message', {
-        receiverId: 2000,
-        message: 'MENSAJE DESDE ANGULAR',
-      });
-    }
-  }
-
-  validateUsername(value: string): void {
-    if (value.length > 1) {
-      this.authService.validateUsername(value).subscribe({
-        next: (isValid) => {
-          console.log('Userme is valid:: ', isValid);
-          this.showUserValidationError = !isValid;
-        },
-        error: (error) => {
-          console.error('VALIDATE-USERNAME-ERROR::', error);
-          this.showUserValidationError = true;
-        }
-    });
     } else {
-      this.showUserValidationError = true;
+      this.loginUsernameFailed = this.user?.invalid || false;
+      this.loginPasswordFailed = this.password?.invalid || false;
     }
   }
 
   validateLogin(username: string, password: string): void {
-    this.validateUsername(username);
-
-    if (this.showUserValidationError == false) {
-      this.authService.login(username, password).subscribe({
-        next:(isLoginSuccessful) => {
-          if (!isLoginSuccessful) {
-            this.showPasswordValidationError = true; // La contraseña es incorrecta
-          }
+    this.authService.login(username, password).subscribe({
+      next: (isLoginSuccessful) => {
+        if (isLoginSuccessful) {
           this.login = true;
-          this.showPasswordValidationError = false; // La contraseña es correcta
-          //danielramos9991@gmail.com
-        },
-        error: (error) => {
-          console.error('LOGIN::', error);
-          this.login = false;
+          this.showPasswordValidationError = false;
+          this.navigateToDashboard();
+        } else {
           this.showPasswordValidationError = true;
         }
-      });
-    } else {
-      console.error('Username validation failed.');
-    }
+      },
+      error: (error) => {
+        console.error('LOGIN::', error);
+        this.login = false;
+        this.showPasswordValidationError = true;
+      }
+    });
   }
+
+  navigateToDashboard() {
+    // Aquí puedes manejar la navegación y la lógica de Socket.io
+    console.log('Navigating to dashboard');
+    this.router.navigate(['dashboard/home']);
+  }
+
+
+
+
+
+
+
+
+
+
 
   joinTheEvent() {
     window.open('https://missionrecycling.org/join-the-event/', '_blank');
