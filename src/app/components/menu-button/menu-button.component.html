@@ -1,7 +1,7 @@
 <button [class.daniel]="isActive(routerLink)" [routerLink]="routerLink">
     <div class="cont-icon">
         <i class="{{iconClass}}"></i>
+        <div *ngIf="notification" class="notification">{{notifications}}</div>
     </div>
     <p *ngIf="label">{{label | capitalize}} </p>
-    <div *ngIf="notification" class="notification">{{notifications}}</div>
 </button>

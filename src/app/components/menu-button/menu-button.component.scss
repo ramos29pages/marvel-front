@@ -2,7 +2,6 @@
 
 @import "../../../variables";
 
-
 $gray1: #b4b4b4;
 $graylith: #f0f4f9;
 $gray2: #a2a2a2;
@@ -25,27 +24,9 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
   width: 100%;
   transition: all 0.2s ease;
   color: #777;
-
-  .notification{
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    background-color: $redColor;
-    width: 18px;
-    height: 18px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 2px;
-    font-size: .6rem;
-    color: white;
-    border-radius: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
 
   .cont-icon {
     display: grid;
@@ -56,20 +37,42 @@ button {
     min-height: 30px;
     border-radius: 5px;
     font-size: 1.4rem;
+    position: relative;
 
     img {
       width: 50%;
-      fill: red;
+    }
+
+    .notification {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      background-color: $redColor;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 2px;
+      font-size: 0.6rem;
+      color: white;
+      border-radius: 16px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   }
 
-  p{
+  p {
+    display: none;
     margin: 0px;
     width: 50px;
-    font-size: .7rem;
+    font-size: 0.7rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media only screen and (min-width: 992px) {
+      display: block;
+    }
   }
 
   &:hover {
@@ -77,46 +80,54 @@ button {
     cursor: pointer;
     font-weight: bold;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media only screen and (min-width: 768px) {
   button {
     background: $graylith;
     border: none;
     display: flex;
-    gap: 10px;
     width: 100%;
-    min-width: 150px;
+    min-width: 200px;
+    height: 48px;
     transition: all 0.2s ease;
+    flex-direction: row;
 
     .cont-icon {
       display: grid;
       place-items: center;
-      background-color: #fff;
-      width: 40px;
-      height: 40px;
-      min-width: 40px;
-      min-height: 40px;
+      // background-color: #fff;
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
       border-radius: 5px;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
+
+      .notification {
+        position: absolute;
+        right: -5px;
+        top: 5px;
+        background-color: $redColor;
+        width: 18px;
+        height: 18px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 2px;
+        font-size: 0.6rem;
+        color: white;
+        border-radius: 16px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+        @media only screen and (min-width: 992px) {
+          right: -100px;
+          top: 15px;
+        }
+      }
 
       img {
         width: 50%;
-        fill: red;
       }
     }
 
@@ -124,10 +135,16 @@ button {
       transition: all 0.2s ease;
       cursor: pointer;
       font-weight: bold;
+      background-color: rgba(128, 128, 128, 0.2);
     }
 
     p {
-      display: block;
+      margin: 0px;
+      width: 100px;
+      font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
