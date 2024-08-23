@@ -13,9 +13,10 @@ $navColor: #f0f4f9;
   height: 140px;
   border-radius: 15px;
   background-color: $navColor;
-  // background-color: crimson;
   grid-template-columns: 1fr;
   display: grid;
+  transition: all ease-in .2s;
+
 
   .cont-profile {
     margin-top: 20px;
@@ -62,7 +63,7 @@ $navColor: #f0f4f9;
 
     .name {
       font-weight: bold;
-      font-size: .8rem;
+      font-size: 0.8rem;
       padding: 0px;
       margin: 0px;
     }
@@ -94,5 +95,119 @@ $navColor: #f0f4f9;
       color: white;
       border-bottom-right-radius: 15px;
     }
+  }
+
+  @media screen and (min-width: 520px) {
+    width: 40vw;
+    max-width: 200px;
+    height: 160px;
+    transition: all ease-in .2s;
+
+    .cont-profile {
+      width: 60px;
+      height: 60px;
+
+    }
+
+    .info-user {
+
+
+      .name {
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .company {
+        font-size: 0.8rem;
+      }
+    }
+
+    .cont-actions {
+      width: 100%;
+      height: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      color: white;
+
+      button:nth-child(1) {
+        background: $blueApp;
+        border: none;
+        border-right: 1px solid white;
+        color: white;
+        border-bottom-left-radius: 15px;
+      }
+      button:nth-child(2) {
+        background: $greenApp;
+        border: none;
+        color: white;
+        border-bottom-right-radius: 15px;
+      }
+    }
+
+
+
+  } //520px
+
+
+
+
+  @media screen and (min-width: 768px) {
+    width: 40vw;
+    max-width: 250px;
+    height: 180px;
+    transition: all ease-in .2s;
+
+
+
+    .cont-profile {
+      width: 60px;
+      height: 60px;
+
+    }
+
+    .info-user {
+
+
+      .name {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .company {
+        font-size: 0.9rem;
+      }
+    }
+
+    .cont-actions {
+      width: 100%;
+      height: 46px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      color: white;
+
+      button:nth-child(1) {
+        background: $blueApp;
+        border: none;
+        border-right: 1px solid white;
+        color: white;
+        border-bottom-left-radius: 15px;
+
+        i{
+          font-size: large;
+        }
+
+      }
+      button:nth-child(2) {
+        background: $greenApp;
+        border: none;
+        color: white;
+        border-bottom-right-radius: 15px;
+
+        i{
+          font-size: large;
+        }
+      }
+    }
+
   }
 }

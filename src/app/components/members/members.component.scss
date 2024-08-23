@@ -2,9 +2,11 @@ $greenApp: #90c129;
 $blueApp: #7aa5f9;
 $navColor: #f0f4f9;
 
+@import "../../../variables";
+
 .container {
   box-sizing: border-box;
-  // background-color: crimson;
+  background-color : #fff;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr;
