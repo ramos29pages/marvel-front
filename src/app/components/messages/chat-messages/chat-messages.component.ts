@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { FooterComponent } from '../../footer/footer.component';
 import { ChatComponent } from '../chat/chat.component';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileMessagesComponent } from '../profile-messages/profile-messages.component';
+import { io } from 'socket.io-client';
 
 @Component({
   selector: 'app-chat-messages',
@@ -37,11 +38,20 @@ export class ChatMessagesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
+  @Output() resize = new EventEmitter<boolean>();
+  isMobile = false;
+
+  userSender = 1;
+  userReceiver = 0;
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      console.log('PARAMETER::::',params);
+      console.log('PARAMETERS ON CHAT MESSAGES::::',params);
+      this.userReceiver = params['id'];
+      console.log('userReceiver',this.userReceiver);
       this.userName = params['id'] + ' Perez';
-      this.profileURL = `https://robohash.org/${this.userName}`
+      this.profileURL = `https://robohash.org/${this.userName}`;
     });
   }
+
 }

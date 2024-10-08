@@ -1,24 +1,28 @@
+import { HourFormatPipe } from './../../../shared/pipes/hour-format.pipe';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UserMessage } from '../../../models/LastMessage';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-last-message',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HourFormatPipe],
   templateUrl: './last-message.component.html',
   styleUrl: './last-message.component.scss'
 })
 export class LastMessageComponent {
   @Input() ms !: UserMessage;
-  messagesNoRead = 22;
+  @Input() messagesNoRead: number = 0;
+  @Output() selected = new EventEmitter<number>();
+
 
   constructor(private router : Router){}
 
 
-  selectConversation(name: string): void {
-    console.log(`Conversation with ${name} selected`);
-    this.router.navigate(['dashboard/messages', name]);
+  selectConversation(idSelected: number): void {
+    console.log(idSelected);
+    this.selected.emit(idSelected);
+    //
   }
 }

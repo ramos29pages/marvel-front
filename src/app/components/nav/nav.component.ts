@@ -14,9 +14,11 @@ export class NavComponent {
   protected username : string = 'Daniel';
   protected imageProfileURL: string = '../../';
   protected logoURL: string = '../../';
-  protected isAutenticated$;
+  protected isAutenticated = true;
 
   constructor(private tokenService: TokenService ){
-    this.isAutenticated$ = tokenService.isAuthenticated;
+    tokenService.isAuthenticated().subscribe(token =>{
+      console.log(token);
+    });
   }
 }

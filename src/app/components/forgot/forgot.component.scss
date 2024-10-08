@@ -8,183 +8,189 @@ section {
   display: grid;
   align-items: center;
 
-  //CONTENEDOR LOGO
-  .cont-section-logo {
-    background: $navColor;
-    padding: 32px;
+  main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    h2 {
-      color: $greenApp;
-    }
-
-    .cont-logo {
-      max-width: 100px;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  //CONTENEDOR DEL FORMULARIO
-  form {
-    width: 100%;
-    // background: red;
-    padding: 0px 12px;
-
-    h2{
-      text-align: center;
-    }
-
-    .input {
-      background: white;
+    //CONTENEDOR LOGO
+    .cont-section-logo {
+      background: $navColor;
+      padding: 32px;
       display: flex;
-      align-items: center;
-      gap: 4px;
-      position: relative;
-      padding: 8px;
-      margin: 18px;
-      border: 2px solid white;
-      border-radius: 16px;
-      transition: all 0.2s ease-in;
 
-      &:focus-within {
-        border: 2px solid $greenApp;
-      }
-
-      .icon {
-        color: $greenApp;
-        font-size: 1.2rem;
-      }
-
-      #eye {
-        cursor: pointer;
-        color: $greenApp;
-      }
-
-      input {
-        background: coral;
-        background: white;
-
-        height: 48px;
-        width: 100%;
-        padding: 8px;
-        transition: all 0.2s ease-in;
-        border: none;
-        outline: none;
-        font-size: 1.2rem;
-      }
-
-      input:focus + label,
-      input:not(:placeholder-shown) + label {
-        background-color: $greenApp;
-        color: white;
-        padding: 0px 10px;
-        top: -8px;
-        left: 32px;
-        font-size: 0.8rem;
-        transition: all 0.2s ease-in;
-      }
-
-      label {
-        top: 22px;
-        left: 38px;
-        position: absolute;
-        transition: all 0.2s ease-in;
-        color: gray;
-
-        &:hover {
-          cursor: text;
-        }
-      }
-    }
-
-    .error{
-      // background-color: crimson;
-      margin: 0px 20px;
-      font-size: .8rem;
-      color: $redColor;
-      margin-bottom: 20px;
-
-    }
-
-    .errorinput{
-      border-color: $redColor;
-
-
-      &:focus-within {
-        border: 2px solid $redColor;
-      }
-
-      .icon {
-        color: $redColor;
-        font-size: 1.2rem;
-      }
-
-      #eye {
-        cursor: pointer;
-        color: $redColor;
-      }
-
-      input:focus + label,
-      input:not(:placeholder-shown) + label {
-        background-color: $redColor;
-      border-color: $redColor;
-        color: white;
-        padding: 0px 10px;
-        top: -8px;
-        left: 32px;
-        font-size: 0.8rem;
-        transition: all 0.2s ease-in;
-      }
-
-      label {
-        top: 22px;
-        left: 38px;
-        position: absolute;
-        transition: all 0.2s ease-in;
-        color: gray;
-
-        &:hover {
-          cursor: text;
-        }
-      }
-    }
-
-    .cont-button{
-    padding: 0px 28px;
-      width: 100%;
-      display: flex;
       flex-direction: column;
-      p{
-       margin: 10px;
-       margin-bottom: 20px;
-       text-decoration: underline;
-      }
-       &:hover{
-        cursor: pointer;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        color: $greenApp;
       }
 
-      .dont{
-        color: $blueApp;
-        font-weight: 500;
-      }
+      .cont-logo {
+        max-width: 100px;
 
-      button{
-        width: 100%;
-        border-radius: 8px;
-        height: 48px;
-        text-align: center;
-        align-self: center;
-        border: none;
-        color: white;
-        font-size: large;
-        background: $blueApp;
+        img {
+          width: 100%;
         }
+      }
+    }
+
+    //CONTENEDOR DEL FORMULARIO
+    form {
+      width: 100%;
+      // background: red;
+      padding: 0px 12px;
+      align-self: center;
+      max-width: 600px;
+
+      h2 {
+        text-align: center;
+      }
+
+      .input {
+        background: white;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+        padding: 8px;
+        margin: 18px;
+        border: 2px solid white;
+        border-radius: 16px;
+        transition: all 0.2s ease-in;
+
+        &:focus-within {
+          border: 2px solid $greenApp;
+        }
+
+        .icon {
+          color: $greenApp;
+          font-size: 1.2rem;
+        }
+
+        #eye {
+          cursor: pointer;
+          color: $greenApp;
+        }
+
+        input {
+          background: coral;
+          background: white;
+
+          height: 48px;
+          width: 100%;
+          padding: 8px;
+          transition: all 0.2s ease-in;
+          border: none;
+          outline: none;
+          font-size: 1.2rem;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+          background-color: $greenApp;
+          color: white;
+          padding: 0px 10px;
+          top: -8px;
+          left: 32px;
+          font-size: 0.8rem;
+          transition: all 0.2s ease-in;
+        }
+
+        label {
+          top: 22px;
+          left: 38px;
+          position: absolute;
+          transition: all 0.2s ease-in;
+          color: gray;
+
+          &:hover {
+            cursor: text;
+          }
+        }
+      }
+
+      .error {
+        // background-color: crimson;
+        margin: 0px 20px;
+        font-size: 0.8rem;
+        color: $redColor;
+        margin-bottom: 20px;
+      }
+
+      .errorinput {
+        border-color: $redColor;
+
+        &:focus-within {
+          border: 2px solid $redColor;
+        }
+
+        .icon {
+          color: $redColor;
+          font-size: 1.2rem;
+        }
+
+        #eye {
+          cursor: pointer;
+          color: $redColor;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+          background-color: $redColor;
+          border-color: $redColor;
+          color: white;
+          padding: 0px 10px;
+          top: -8px;
+          left: 32px;
+          font-size: 0.8rem;
+          transition: all 0.2s ease-in;
+        }
+
+        label {
+          top: 22px;
+          left: 38px;
+          position: absolute;
+          transition: all 0.2s ease-in;
+          color: gray;
+
+          &:hover {
+            cursor: text;
+          }
+        }
+      }
+
+      .cont-button {
+        padding: 0px 28px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        p {
+          margin: 10px;
+          margin-bottom: 20px;
+          text-decoration: underline;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+
+        .dont {
+          color: $blueApp;
+          font-weight: 500;
+        }
+
+        button {
+          width: 100%;
+          border-radius: 8px;
+          height: 48px;
+          text-align: center;
+          align-self: center;
+          border: none;
+          color: white;
+          font-size: large;
+          background: $blueApp;
+        }
+      }
     }
   }
 }

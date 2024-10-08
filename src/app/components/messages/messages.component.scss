@@ -33,24 +33,23 @@ $navColor: #f0f2f9;
   .user-data {
     background-color: white;
     // background-color: rgb(31, 75, 63);
-    overflow-y: scroll;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    overflow-y: scroll;
 
     .chats {
       width: 100%;
+      height: 100%;
     }
 
     .general-chat {
       background-color: $navColor;
       border-radius: 5px;
-
       display: grid;
       height: 100%;
-      place-items: center;
+      width: 100%;
       display: none;
-
 
       .info {
         // background-color: crimson;
@@ -59,20 +58,56 @@ $navColor: #f0f2f9;
         justify-content: center;
         text-align: center;
 
-        img{
+        img {
           width: 100px;
           align-self: center;
           filter: brightness(1.1) grayscale(1);
         }
 
-        h3{
-          font-size: .9rem;
+        h3 {
+          font-size: 0.9rem;
         }
 
         p {
           color: gray;
-          font-size: .7rem;
+          font-size: 0.7rem;
         }
+      }
+    }
+
+    @media screen and (min-width: 1100px) {
+      background-color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      overflow-y: hidden;
+
+      .chats {
+        width: 100%;
+        height: calc(100vh - 130px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 8px; /* Establece el ancho de la barra de desplazamiento */
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(
+            197,
+            197,
+            197,
+            0.526
+          ); /* Establece el color de la barra que se mueve */
+          border-radius: 4px; /* Añade esquinas redondeadas a la barra que se mueve */
+        }
+      }
+
+      .general-chat {
+        display: grid;
+        background-color: $navColor;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
       }
     }
   }

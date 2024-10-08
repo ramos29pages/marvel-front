@@ -1,0 +1,31 @@
+section{
+
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+
+  .info {
+    // background-color: crimson;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      width: 100px;
+      align-self: center;
+      // filter: brightness(1.1) grayscale(1);
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      color: gray;
+      font-size: 0.8rem;
+    }
+  }
+
+}

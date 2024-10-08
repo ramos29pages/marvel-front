@@ -1,3 +1,4 @@
+import { GeneralInfoComponent } from './components/messages/general-info/general-info.component';
 import { MeetComponent } from './components/meet/meet.component';
 import { SearchCompanyComponent } from './components/home/search-company/search-company.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -28,49 +29,54 @@ export const routes: Routes = [
       {
         path: 'home',
         component: SearchCompanyComponent,
-        canActivate: [authGuard]
 
       },
       {
         path: 'members',
         component: MembersComponent,
-        canActivate: [authGuard]
 
+      },
+      {
+        path: 'mmessages/:id',
+        component: ChatMessagesComponent,
       },
       {
         path: 'messages',
         component: MessagesComponent,
-        canActivate: [authGuard]
+        children: [
+          {
+            path: 'chat/:id',
+            component: ChatMessagesComponent,
+
+          },
+          {
+            path: 'show-general',
+            component: GeneralInfoComponent,
+
+          }
+        ]
 
       },
-      {
-        path: 'messages/:id',
-        component: ChatMessagesComponent,
-        canActivate: [authGuard]
 
-      },
       {
         path: 'myquotes',
         component: QuotesComponent,
-        canActivate: [authGuard]
 
       },
       {
         path: 'account',
         component: AccountComponent,
-        canActivate: [authGuard]
 
       },
       {
         path: 'meet',
         component: MeetComponent,
-        canActivate: [authGuard]
 
       },
     ],
   },
   { path: '**',
-    redirectTo: '',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
 ];

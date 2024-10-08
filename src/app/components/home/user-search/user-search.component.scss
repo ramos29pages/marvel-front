@@ -22,7 +22,8 @@ $navColor: #f0f4f9;
       align-items: center;
 
       &:hover {
-        background-color: #2d2d2d18;
+        cursor: pointer;
+        // background-color: #2d2d2d18;
       }
 
       .cont-profile {

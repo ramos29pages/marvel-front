@@ -171,15 +171,23 @@ section {
           margin: 10px;
           margin-bottom: 20px;
           text-decoration: underline;
-        }
-        &:hover {
-          cursor: pointer;
+
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
+
         .dont {
-          color: $blueApp;
+          // color: $blueApp;
           color: #222;
           font-weight: 500;
+
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
         button {
@@ -193,6 +201,10 @@ section {
           font-size: large;
           background: $blueApp;
           font-weight: bold;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

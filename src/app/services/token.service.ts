@@ -1,35 +1,28 @@
+import { API } from './../constants/constants';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { CURRENT_TOKEN } from '../constants/constants';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  constructor(private http: HttpClient) {}
 
-  constructor(){
-    const token = this.getToken();
-    if (token){this.updateToken(true)};
+  isAuthenticated(): Observable<{ authenticated: boolean }> {
+    // Hacemos una solicitud al backend para verificar si el usuario está autenticado.
+    // La cookie con el token será enviada automáticamente con la solicitud.
+    return this.http.get<{ authenticated: boolean }>(API.AuthCheckAuthEndpoint, { withCredentials: true });
   }
 
-  setToken(token : string){
-    this.updateToken(true);
-    localStorage.setItem( CURRENT_TOKEN, token);
+  refreshToken(): Observable<void> {
+    // Solicita un nuevo token al backend usando el refresh token (enviado como cookie).
+    return this.http.post<void>(API.AuthRefreshTokenEndpoint, {}, { withCredentials: true });
   }
 
-  getToken(): string | null {
-    // this.setToken('TESTS');
-    return localStorage.getItem(CURRENT_TOKEN) || null;
-  }
-
-  updateToken(status : boolean){
-    this.isAuthenticated.next(status);
-  }
-
-  removeToken(){
-    this.updateToken(false);
-    return localStorage.removeItem(CURRENT_TOKEN);
+  logout(): Observable<void> {
+    // Enviar una solicitud al backend para cerrar sesión, lo que debería eliminar las cookies en el servidor.
+    return this.http.post<void>(API.AuthLogoutEndpoint, {}, { withCredentials: true });
   }
 }

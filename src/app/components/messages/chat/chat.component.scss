@@ -12,8 +12,7 @@ $navColor: #f0f2f9;
   grid-template-rows: 40px 1fr 50px;
   display: grid;
   box-sizing: border-box;
-  // background-color: crimson;
-  height: calc(70vh - 130px);
+  height: calc(100vh - 370px);
   // border: 1px solid rgb(128, 128, 128, 0.5);
 
   .head {
@@ -62,19 +61,16 @@ $navColor: #f0f2f9;
       border-radius: 4px; /* Añade esquinas redondeadas a la barra que se mueve */
     }
 
-    .day{
-
-      .dateday{
+    .day {
+      .dateday {
         text-align: center;
         width: 100%;
         margin: 0px;
-        font-size: .8rem;
-      color: gray;
-
+        font-size: 0.8rem;
+        color: gray;
       }
 
-      .data{
-
+      .data {
         .box-ms-they {
           margin: 5px;
           padding: 8px;
@@ -130,9 +126,9 @@ $navColor: #f0f2f9;
                 // background-color: crimson;
                 display: grid;
 
-                span:nth-child(2){
+                span:nth-child(2) {
                   // background-color: cadetblue;
-                  font-size: .7rem;
+                  font-size: 0.7rem;
                   text-align: end;
                   color: $blueApp;
                 }
@@ -195,9 +191,9 @@ $navColor: #f0f2f9;
                 display: grid;
                 // background-color: crimson;
 
-                span:nth-child(2){
+                span:nth-child(2) {
                   // background-color: cadetblue;
-                  font-size: .7rem;
+                  font-size: 0.7rem;
                   text-align: end;
                   color: white;
                 }
@@ -233,12 +229,12 @@ $navColor: #f0f2f9;
         }
       }
 
-      .primary{
+      .primary {
         background-color: $greenApp;
-        color: white
+        color: white;
       }
 
-      .secondary{
+      .secondary {
         color: #777;
       }
     }
@@ -259,5 +255,10 @@ $navColor: #f0f2f9;
         }
       }
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    // background: rgb(151, 71, 87);
+    height: calc(100vh - 390px);
   }
 }

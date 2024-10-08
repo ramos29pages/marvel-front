@@ -10,94 +10,45 @@
         </button>
       </div>
     </article>
-    <article class="messages">
-      <div class="day">
-        <p class="dateday">19 de septiembre</p>
-        <div class="data">
-          <div class="box-ms-they">
-            <div class="date-box">
-            </div>
-            <div class="with">
-              <div class="profile">
-                <div class="cont">
-                  <img src="../../../../assets/images/ph1.jpg" alt="profile">
+
+      <article class="messages" >
+        <div class="day" *ngFor="let date of dias">
+          <p class="dateday">{{ date }}</p>
+          <div class="data">
+            <div *ngFor="let message of messagesByDate[date]" [ngClass]="{'box-ms-they': message.senderId == id, 'box-ms-me': message.senderId != id}">
+              <div class="date-box">
+              </div>
+              <div class="with">
+                <div class="profile">
+                  <div class="cont">
+                    <img src="../../../../assets/images/ph1.jpg" alt="profile">
+                  </div>
                 </div>
-              </div>
-              <div class="cont-messages">
-                <p class="message">
-                  <span>
-                    Hi, my name is Juan, can i get in touch with you ?
-                  </span>
-                  <span>14:50</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-ms-me">
-            <div class="date-box">
-            </div>
-            <div class="with">
-              <div class="profile">
-                <div class="cont">
-                  <img src="../../../../assets/images/ph2.jpg" alt="profile">
+                <div class="cont-messages">
+                  <p class="message">
+                    <span>
+                     {{message.message}}
+                    </span>
+                    <span>{{ message.createdDate | hourFormat}}</span>
+                  </p>
                 </div>
-              </div>
-              <div class="cont-messages">
-                <p class="message">
-                  <span>
-                    Hi Juan, nice to meet you.
-                  </span>
-                  <span>14:50</span>
-                </p>
-                <p class="message">
-                  <span>
-                    sure !!!
-                  </span>
-                  <span>14:51</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="box-ms-they">
-            <div class="date-box">
-              <p></p>
-            </div>
-            <div class="with">
-              <div class="profile">
-                <div class="cont">
-                  <img src="../../../../assets/images/ph1.jpg" alt="profile">
-                </div>
-              </div>
-              <div class="cont-messages">
-                <p class="message">
-                  <span>
-                    Let me check.
-                  </span>
-                  <span>14:55</span>
-                </p>
-                <p class="message">
-                  <span>
-                    Thanks
-                  </span>
-                  <span>14:55</span>
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </article>
-    <form class="footer">
+      </article>
+
+    <form class="footer" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
       <div class="cont-button">
         <button class="secondary">
           <i class="fa-solid fa-video" (click)="meet()"></i>
         </button>
       </div>
       <div class="cont-input">
-        <input type="text" placeholder="Write your message..." required>
+        <input formControlName="message" placeholder="Write your message..." required>
       </div>
       <div class="cont-button">
-        <button class="primary">
+        <button class="primary" type="submit">
           <i class="fa-solid fa-paper-plane"></i>
         </button>
       </div>

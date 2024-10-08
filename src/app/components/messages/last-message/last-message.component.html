@@ -1,19 +1,19 @@
-<div class="chat" (click)="selectConversation(ms.user.name)">
+<div class="chat" (click)="selectConversation(ms.userSender.id)">
     <div class="user-chat">
         <div class="cont-profile">
-            <img [src]="ms.user.profileURL" alt="profile image">
+            <img [src]="ms.userSender.profileURL" alt="profile image">
         </div>
         <div class="info-user-message">
             <div class="info">
-                <p class="username-chat">{{ ms.user.name + ' '+ms.user.surname}}</p>
-                <p class="lastHour">{{ ms.lastHour }}</p>
+                <p class="username-chat">{{ ms.userSender.name + ' '+ms.userSender.surname}}</p>
+                <p class="lastHour">{{ ms.createdDate | hourFormat }}</p>
                 <p *ngIf="ms.read" class="notification">
                   <span>
                     {{messagesNoRead}}
                   </span>
                 </p>
             </div>
-            <p class="lastMessage">{{ ms.lastMessage }}</p>
+            <p class="lastMessage">{{ ms.message }}</p>
         </div>
     </div>
 </div>

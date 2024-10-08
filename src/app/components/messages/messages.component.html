@@ -1,22 +1,20 @@
 <div class="container">
-    <div class="title">
-        <p class="title">{{title}} </p>
-    </div>
-    <div class="user-data">
-        <section class="chats">
-            @for(ms of messages; track ms.id){
-                <app-last-message [ms]="ms">
+  <div class="title">
+    <p class="title">{{title}} </p>
+  </div>
 
-                </app-last-message>
-            }
-        </section>
-        <section class="general-chat">
-            <div class="info">
-                <img src="../../../assets/images/logo.png" alt="logo">
-                <h3>{{company}}</h3>
-                <p>{{sloganToChatSection}}</p>
-            </div>
-        </section>
-    </div>
-    <!-- <app-footer></app-footer> -->
+  <div class="user-data">
+    <section class="chats">
+      @for(ms of messages; track ms.id){
+      <app-last-message [ms]="ms" (selected)="onConversationSelected($event)">
+
+      </app-last-message>
+      }
+    </section>
+    <section class="general-chat">
+      <app-general-info  *ngIf="!selectedConversation"></app-general-info>
+      <router-outlet  *ngIf="selectedConversation"></router-outlet>
+    </section>
+  </div>
+  <!-- <app-footer></app-footer> -->
 </div>

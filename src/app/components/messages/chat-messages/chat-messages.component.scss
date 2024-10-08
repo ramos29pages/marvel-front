@@ -2,38 +2,35 @@ $greenApp: #90c129;
 $blueApp: #7aa5f9;
 $navColor: #f0f2f9;
 
-
-
 .container {
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    overflow: hidden;
-    height: 100%;
-    // background-color: crimson;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  overflow: hidden;
+  height: 100%;
 
+  .cont-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    // background-color: royalblue;
 
-    .cont-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-      // background-color: royalblue;
-
-      p{
-        font-size: 1.2rem;
-        font-weight: bold;
-        padding: 0px 18px;
-      }
-
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0px 18px;
     }
-
-
-    section {
-        overflow-y: none;
-        // display: grid;
-        // background-color: rgb(52, 60, 86);
-
-        .chat{
-        }
-      }
   }
+
+  section {
+    overflow-y: none;
+
+    .chat {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 100%;
+  }
+}
