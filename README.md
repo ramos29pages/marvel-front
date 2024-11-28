@@ -77,7 +77,7 @@ npm start
 ## 📄 Vista previa
 
 El proyecto se encuentra online en un servicio de netlify
-[VER PROYECTO ONLINE](https://6747d4e759edc9f590afc14f--tecnofactory-marvel-front.netlify.app/login)
+[VER PROYECTO ONLINE](https://tecnofactory-marvel-front.netlify.app/login)
 
 ## 📲 Contacto
 Si tiene alguna pregunta o sugerencia, no dude en contactarme danielramos9991@gmail.com
