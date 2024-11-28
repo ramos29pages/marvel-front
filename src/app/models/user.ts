@@ -1,11 +1,7 @@
 export interface IUser{
-  id: number;
+  _id: number;
   name: string;
-  surname: string;
-  flag: string;
-  country: string;
-  company: string;
-  workPosition: string;
-  profileURL: string;
-  categories: Array<string>;
+  password: string;
+  email: string,
+  favorites: Array<Number>;
 }

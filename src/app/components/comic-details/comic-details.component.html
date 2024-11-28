@@ -1,0 +1,25 @@
+<article class="container">
+
+  <section class="section-image">
+    <h3>{{comicData.title}}</h3>
+    <div class="cont-image">
+      <img [src]="comicData.imageUrl" alt="{{comicData.title}}" [srcset]="comicData.imageUrl">
+    </div>
+    <p>{{ comicData.description}}</p>
+
+  </section>
+
+  <section class="section-data">
+    <h1>Personajes de comic</h1>
+    <h2 *ngFor="let item of comicData.characters">
+      {{item.name}}
+    </h2>
+
+    <h1>Creadores del comic</h1>
+    <h2 *ngFor="let item of comicData.creators">
+      {{item.name}} - {{ item.role}}
+    </h2>
+  </section>
+
+</article>
+

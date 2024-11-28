@@ -1,0 +1,49 @@
+<section>
+  <main>
+    <div class="cont-section-logo">
+      <div class="cont-logo">
+        <img src="../../../assets/icons/1990.png" alt="company-logo" srcset="../../../assets/icons/1990.png">
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <h2>Registro de usuario</h2>
+
+      <!-- Campo Nombre -->
+      <div [ngClass]="{ input: form, errorinput : name?.invalid && (name?.dirty || name?.touched) }">
+        <i class="fa-solid fa-user icon"></i>
+        <input type="text" id="name" placeholder=" " formControlName="name" required>
+        <label for="name">Nombre</label>
+      </div>
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error">
+        <p><i class="fa-solid fa-circle-info"></i> {{errorName}}</p>
+      </div>
+
+      <!-- Campo Identificación -->
+      <div [ngClass]="{ input: form, errorinput : id?.invalid && (id?.dirty || id?.touched) }">
+        <i class="fa-solid fa-id-card icon"></i>
+        <input type="text" id="id" placeholder=" " formControlName="id" required>
+        <label for="id">Identificación</label>
+      </div>
+      <div *ngIf="id?.invalid && (id?.dirty || id?.touched)" class="error">
+        <p><i class="fa-solid fa-circle-info"></i> {{errorId}}</p>
+      </div>
+
+      <!-- Campo Correo -->
+      <div [ngClass]="{ input: form, errorinput : email?.invalid && (email?.dirty || email?.touched) }">
+        <i class="fa-solid fa-envelope icon"></i>
+        <input type="email" id="email" placeholder=" " formControlName="email" required>
+        <label for="email">Correo</label>
+      </div>
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error">
+        <p><i class="fa-solid fa-circle-info"></i> {{errorEmail}}</p>
+      </div>
+
+      <!-- Botones -->
+      <div class="cont-button">
+        <button (click)="registerUser()">Registrarse</button>
+        <p (click)="backToLogin()" class="back">Volver al inicio de sesión</p>
+      </div>
+    </form>
+  </main>
+</section>
+

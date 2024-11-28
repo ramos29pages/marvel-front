@@ -23,11 +23,12 @@ section {
       align-items: center;
 
       h2 {
-        color: $greenApp;
+        color: crimson;
       }
 
       .cont-logo {
-        max-width: 100px;
+        max-width: 200px;
+        height: 100px;
 
         img {
           width: 100%;
@@ -60,17 +61,17 @@ section {
         transition: all 0.2s ease-in;
 
         &:focus-within {
-          border: 2px solid $greenApp;
+          border: 2px solid #222;
         }
 
         .icon {
-          color: $greenApp;
+          color: #222;
           font-size: 1.2rem;
         }
 
         #eye {
           cursor: pointer;
-          color: $greenApp;
+          color: #222;
         }
 
         input {
@@ -88,7 +89,7 @@ section {
 
         input:focus + label,
         input:not(:placeholder-shown) + label {
-          background-color: $greenApp;
+          background-color: #222;
           color: white;
           padding: 0px 10px;
           top: -8px;
@@ -175,7 +176,7 @@ section {
         }
 
         .dont {
-          color: $blueApp;
+          color: crimson;
           font-weight: 500;
         }
 
@@ -188,7 +189,7 @@ section {
           border: none;
           color: white;
           font-size: large;
-          background: $blueApp;
+          background: crimson;
         }
       }
     }

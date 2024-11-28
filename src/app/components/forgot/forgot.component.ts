@@ -23,7 +23,7 @@ export class ForgotComponent {
   hide = false;
   eye = 'fa-solid fa-eye';
   passtype = 'password';
-  buttontext = 'Get my code';
+  buttontext = 'Restablecer contraseña';
 
   canReset = false;
   codeSend: boolean = false;
@@ -33,9 +33,9 @@ export class ForgotComponent {
   emailControl: FormControl;
   codeControl: FormControl;
 
-  formReset: FormGroup;
-  passControl: FormControl;
-  repassControl: FormControl;
+  // formReset: FormGroup;
+  // passControl: FormControl;
+  // repassControl: FormControl;
 
   constructor(
     private fb: FormBuilder,
@@ -49,26 +49,26 @@ export class ForgotComponent {
     ]);
     this.codeControl = new FormControl('', Validators.required);
 
-    this.passControl = new FormControl('', Validators.required);
-    this.repassControl = new FormControl('', Validators.required);
+    // this.passControl = new FormControl('', Validators.required);
+    // this.repassControl = new FormControl('', Validators.required);
 
     this.formEmail = this.fb.group({
       email: this.emailControl,
-      code: this.codeControl,
+      pass: this.codeControl,
     });
 
-    this.formReset = this.fb.group({
-      password: this.passControl,
-      repassword: this.repassControl,
-    });
+    // this.formReset = this.fb.group({
+    //   password: this.passControl,
+    //   repassword: this.repassControl,
+    // });
   }
 
-  getmycode() {
-    console.log(this.formEmail);
+  async resetPassword() {
+    console.log('[INFO ]',this.formEmail);
 
     if (this.emailControl.valid) {
       this.codeSend = this.emailService.validate(this.emailControl.value);
-      this.buttontext = 'Reset Password';
+      this.buttontext = 'Confirmar cambio';
     }
 
     console.log('CODE CONTROL VALID:: ',this.codeControl.value, );
@@ -77,22 +77,31 @@ export class ForgotComponent {
       this.emailControl.valid &&
       this.codeSend &&
       this.codeControl.valid &&
-      this.codeService.validate(this.codeControl.value)
+      this.buttontext == 'Confirmar cambio'
     ) {
-      alert('Password Validation has been start.');
-      this.codeValid = true;
+      alert('No se han guardado los cambios.');
+      this.formEmail.reset();
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 2000);
+      console.log(this.formEmail.value);
+      // this.changePassword();
     }
   }
 
   changePassword() {
-    if (this.codeValid && this.formEmail.valid && this.formReset.valid) {
-      alert('Change Password');
+    if (this.formEmail.valid) {
+      alert('Changed Password');
       this.router.navigate(['login']);
     }
   }
 
-  resendCode(){
+  goHome(){
     alert('Resend Code');
+  }
+
+  backToLogin() {
+    this.router.navigate(['login']);
   }
 
   showPassword() {

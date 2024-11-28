@@ -1,4 +1,3 @@
-import { MessagesComponent } from './../components/messages/messages.component';
 export interface IUserAuth {
   id: number;
   email: string;
@@ -11,7 +10,5 @@ export interface ILogin {
 }
 
 export interface ILoginResponse {
-  status: boolean;
-  message: string;
   token ?: string;
 }

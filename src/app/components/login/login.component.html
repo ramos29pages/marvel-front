@@ -2,16 +2,16 @@
   <main>
     <div class="cont-section-logo">
       <div class="cont-logo">
-        <img src="../../../assets/images/logo.png" alt="company-logo" srcset="../../../assets/images/logo.png">
+        <img src="../../../assets/icons/1990.png" alt="company-logo" srcset="../../../assets/icons/1990.png">
       </div>
-      <h2>Mission Recycling</h2>
+      <!-- <h2>MARVEL COMICS</h2> -->
     </div>
     <form [formGroup]="form">
-      <h2>Login</h2>
+      <h2>Inicio de sesión</h2>
       <div  [ngClass]="{ input: form, errorinput : user?.invalid && (user?.dirty || user?.touched || loginUsernameFailed) }">
         <i class="fa-solid fa-user icon"></i>
         <input type="text" id="user" placeholder=" " formControlName="user" required>
-        <label for="user">Username</label>
+        <label for="user">correo</label>
       </div>
       <!--   -->
       <div *ngIf="user?.invalid && (user?.dirty || user?.touched || loginUsernameFailed)" class="error">
@@ -29,7 +29,7 @@
       <div [ngClass]="{ input: form, errorinput : password?.invalid && (password?.dirty || password?.touched || loginPasswordFailed)}">
         <i class="fa-solid fa-lock icon"></i>
         <input type="{{passtype}}" id="password" placeholder=" " formControlName="password">
-        <label for="password">Password</label>
+        <label for="password">contraseña</label>
         <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
       </div>
       <div *ngIf="password?.invalid && (password?.dirty || password?.touched || loginPasswordFailed)" class="error">
@@ -45,12 +45,12 @@
         </p>
       </div>
       <div class="cont-button">
-        <p (click)="forgotPassword()" class="forgot">Forgot your password?</p>
+        <p (click)="forgotPassword()" class="forgot">¿ Olvidaste tu contraseña ?</p>
         <button (click)="goToDash()">
-          Login
+          Entrar
         </button>
-        <p (click)="joinTheEvent()" class="dont">
-          You do not have an account?
+        <p (click)="register()" class="dont">
+          Crear un nuevo registro
         </p>
       </div>
     </form>

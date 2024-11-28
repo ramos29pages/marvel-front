@@ -62,6 +62,7 @@ export class LoginComponent {
   }
 
   validateLogin(username: string, password: string): void {
+    console.log('[DATA]', username, password);
     this.authService.login(username, password).subscribe({
       next: (isLoginSuccessful) => {
         if (isLoginSuccessful) {
@@ -83,21 +84,11 @@ export class LoginComponent {
   navigateToDashboard() {
     // Aquí puedes manejar la navegación y la lógica de Socket.io
     console.log('Navigating to dashboard');
-    this.router.navigate(['dashboard/home']);
+    this.router.navigate(['dashboard/comics']);
   }
 
-
-
-
-
-
-
-
-
-
-
-  joinTheEvent() {
-    window.open('https://missionrecycling.org/join-the-event/', '_blank');
+  register() {
+    this.router.navigate(['register']);
   }
 
   forgotPassword() {

@@ -1,0 +1,54 @@
+<section class="container">
+
+  <div class="cont-title">
+      <p>Lista de Comics de marvel</p>
+      <p class="fav" (click)="toggleFilter()"><i class="{{actionFilterIcon}}">{{actionFilter}}</i></p>
+  </div>
+
+  <form class="form-cont-filters">
+
+      <div class="cont-input-filters">
+          <div class="filters">
+
+              <div class="filter">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" placeholder="Keywords">
+              </div>
+
+              <div class="icon-filter">
+                <i class="fa-solid fa-filter"></i>
+              </div>
+
+          </div>
+      </div>
+  </form>
+
+
+  <section *ngIf="comics" class="comic-list" appHorizontalScroll>
+
+    <article *ngIf="!comics.length" class="cont-loader">
+      <div class="loader"></div>
+    </article>
+    <article
+      class="comic"
+      *ngFor="let comic of filteredComics"
+      [attr.data-id]="comic.id"
+      (click)="goToDetails(comic.id)">
+      <div class="cont-imagen">
+        <img [src]="comic.thumbnail" [alt]="comic.title">
+      </div>
+      <div class="info">
+        <h1>{{ comic.title }}</h1>
+      </div>
+      <div
+        ngClass="{{ this.isFavorite(comic.id) ? 'button-favorite' : 'button-non-favorite' }}"
+        title="Marcar Favorito"
+        (click)="toggleFavorite(comic.id, $event)">
+        <i class="fa fa-star"></i>
+      </div>
+    </article>
+  </section>
+
+
+</section>
+

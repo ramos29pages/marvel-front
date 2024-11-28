@@ -2,20 +2,6 @@ $navColor: #f0f4f9;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //TABLETS
 @media only screen and (min-width: 768px) {
   .content {
@@ -31,7 +17,7 @@ $navColor: #f0f4f9;
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-areas: "nav nav" "menu content";
+    grid-template-areas: "nav" "content";
     grid-template-columns: 200px 1fr;
     grid-template-rows: 70px 1fr;
   }

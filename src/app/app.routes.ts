@@ -1,82 +1,36 @@
-import { GeneralInfoComponent } from './components/messages/general-info/general-info.component';
-import { MeetComponent } from './components/meet/meet.component';
-import { SearchCompanyComponent } from './components/home/search-company/search-company.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { LoginComponent } from './components/login/login.component';
-import { guestGuard } from './guards/guest.guard';
-import { ErrorComponent } from './components/error/error.component';
 import { Routes } from '@angular/router';
-import { AccountComponent } from './components/account/account.component';
-import { HomeComponent } from './components/home/home.component';
-import { MembersComponent } from './components/members/members.component';
-import { ChatMessagesComponent } from './components/messages/chat-messages/chat-messages.component';
-import { MessagesComponent } from './components/messages/messages.component';
-import { QuotesComponent } from './components/quotes/quotes.component';
 import { authGuard } from './guards/auth.guard';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ComicListComponent } from './components/comic-list/comic-list.component';
+import { ComicDetailsComponent } from './components/comic-details/comic-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'reset-password', component: ForgotComponent
-  },
-  { path: 'errror', component: ErrorComponent,
-  },
+  { path: 'reset-password', component: ForgotComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: 'dashboard',
     component: HomeComponent,
+    canActivate: [authGuard],
     children: [
       {
-        path: 'home',
-        component: SearchCompanyComponent,
-
+        path: 'comics',
+        component: ComicListComponent,
       },
       {
-        path: 'members',
-        component: MembersComponent,
-
+        path: 'comics/:comicId',
+        component: ComicDetailsComponent,
       },
       {
-        path: 'mmessages/:id',
-        component: ChatMessagesComponent,
-      },
-      {
-        path: 'messages',
-        component: MessagesComponent,
-        children: [
-          {
-            path: 'chat/:id',
-            component: ChatMessagesComponent,
-
-          },
-          {
-            path: 'show-general',
-            component: GeneralInfoComponent,
-
-          }
-        ]
-
+        path: 'favoritos',
+        component: HomeComponent,
       },
 
-      {
-        path: 'myquotes',
-        component: QuotesComponent,
-
-      },
-      {
-        path: 'account',
-        component: AccountComponent,
-
-      },
-      {
-        path: 'meet',
-        component: MeetComponent,
-
-      },
     ],
   },
-  { path: '**',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];

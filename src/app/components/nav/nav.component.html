@@ -1,7 +1,7 @@
 <div class="container">
   <div class="cont-logo">
-    <img src="../../../assets/images/logo.png" alt="logo">
-    <p>Mission Recycling</p>
+    <img src="../../../assets/icons/1990.png" alt="logo">
+    <p>MARVEL API</p>
   </div>
   @if(true){
   <section>
@@ -10,13 +10,8 @@
       <p id="notifications">2</p>
     </div>
     <div class="close-session">
-      <button>
-        <div class="cont-user-image">
-          <img src="../../../assets/images/ph2.jpg" alt="profileimage">
-          <p class="signal-notification"></p>
-        </div>
-        <p><span id="username">{{username}}</span><i class="fa-solid fa-chevron-down"></i></p>
-
+      <button (click)="goFavorites()">
+        <p><span id="username"><i class="fa-solid fa-right-from-bracket"></i>Cerrar</span></p>
       </button>
     </div>
   </section>

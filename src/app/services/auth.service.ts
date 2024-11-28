@@ -12,15 +12,16 @@ export class AuthService {
 
   constructor( private tokenService: TokenService, private http: HttpClient ) { }
 
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<ILoginResponse>(API.AuthLoginEndpoint, { username, password })
+  login(email: string, password: string): Observable<boolean> {
+    return this.http.post<ILoginResponse>('http://localhost:3000/auth/login', { email, password })
       .pipe(
         map(response => {
-          if (response.status) {
-            console.log('Login successful');
+          if (response.token) {
+            localStorage.setItem('authToken', response.token);
+            console.log('Login successful, token saved.');
             return true;
           } else {
-            console.error('Login failed:', response.message);
+            console.error('Login failed');
             return false;
           }
         })

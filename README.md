@@ -1,27 +1,85 @@
-# MsFront
+# FRONTEND API MARVEL TECNOFACTORY 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
-## Development server
+## 🏠 Descripción General
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Vista Previa del Producto](./src/assets/image.png)
 
-## Code scaffolding
+Este proyecto Angular es una aplicación web de una sola página (SPA) que implementa componentes standalone para una mayor modularidad y reutilización. Ha sido desarrollado como prueba técnica para TechnoFactory.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📋 Tabla de Contenidos
 
-## Build
+1. [Estructura del Proyecto](#estructura-del-proyecto)
+2. [Instalación y Ejecución](#instalación-y-ejecución)
+6. [Vista Previa](#vista-previa)
+7. [Contacto](#contacto)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📒Estructura del proyecto
 
-## Running unit tests
+```code 
+marvel-front/
+├── src
+│   ├── app
+│   │   ├── components #Componentes reutilizables
+│   │   ├── directives 
+│   │   ├── guards
+│   │   ├── interceptors
+│   │   ├── models
+│   │   ├── services
+│   │   └── assets
+│   │       
+│   │       
+│   └── index.html
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## ❇️ Instalación y Ejecución
 
-## Running end-to-end tests
+> Prerrequisitos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Asegúrese de tener instalado
 
-## Further help
+- **Node.js y npm (o yarn):** Node para ejecutar la aplicación (https://nodejs.org/) 
+- **GIT:** Git para clonar el repostorio (https://git-scm.com)
+- **Angular CLI:** Instala el Angular CLI globalmente:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+```code 
+npm install -g @angular/cli
+```
+
+### Clonar el Repositorio
+
+Clone este repositorio en tu máquina local:
+
+```Bash
+git clone LINK_COPIADO_DEL_REPOSITORIO
+```
+
+### Instalar Dependencias
+
+Navegue al directorio del proyecto:
+
+```Bash
+cd marvel-front
+```
+instale las dependencias necesarias con el comando
+
+```Bash
+npm install
+```
+
+### Ejecutar proyecto
+
+```Bash
+npm start
+```
+
+## 📄 Vista previa
+
+El proyecto se encuentra online en un servicio de netlify
+[VER PROYECTO ONLINE]()
+
+## 📲 Contacto
+Si tiene alguna pregunta o sugerencia, no dude en contactarme danielramos9991@gmail.com
+
+[Visitar portafolio web](https://danielramos.netlify.app)

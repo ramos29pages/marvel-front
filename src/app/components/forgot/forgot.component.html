@@ -2,75 +2,75 @@
   <main>
     <div class="cont-section-logo">
       <div class="cont-logo">
-        <img src="../../../assets/images/logo.png" alt="company-logo" srcset="../../../assets/images/logo.png">
+        <img src="../../../assets/iocns/1990.png" alt="company-logo" srcset="../../../assets/icons/1990.png">
       </div>
-      <h2>Mission Recycling</h2>
+      <!-- <h2>MARVEL COMICS</h2> -->
     </div>
     <form
     [formGroup]="formEmail"  *ngIf="!codeValid" class="form-reset-email">
-      <h2>Reset your password</h2>
+      <h2>Restablece tu contraseña</h2>
       <div class="input">
         <i class="fa-solid fa-envelope icon"></i>
         <input type="text" id="user" placeholder=" " formControlName="email" required>
-        <label for="user">Email</label>
+        <label for="user">Correo</label>
       </div>
 
       <div *ngIf="codeSend" class="input">
         <i class="fa-solid fa-key icon"></i>
-        <input type="text" id="code" placeholder=" " formControlName="code" required>
-        <label for="code">Code Received</label>
+        <input type="text" id="code" placeholder=" " formControlName="pass" required>
+        <label for="code">Contraseña nueva</label>
       </div>
       <!--   -->
       <div class="error">
         <p *ngIf="formEmail.get('email')?.touched &&formEmail.get('email')?.errors?.['required']" >
           <i  *ngIf="emailControl.errors?.['required']" class="fa-solid fa-circle-info"></i>
-          Email is required.
+          El correo es requerido
         </p>
         <p *ngIf="emailControl.errors?.['email']" >
           <i class="fa-solid fa-circle-info"></i>
-          This is a invalid email.
+          El correo es invalido
         </p>
       </div>
       <div class="cont-button">
-        <button (click)="getmycode()">
+        <button (click)="resetPassword()">
           {{buttontext}}
         </button>
-        <p *ngIf="codeSend" class="dont" (click)="resendCode()">
-          Resend the code.
+        <p class="dont" (click)="backToLogin()">
+          Iniciar sesion
         </p>
       </div>
     </form>
 
-    <form *ngIf="codeValid" class="form-reset-password" [formGroup]="formReset">
-      <h2>Reset your password</h2>
+    <!-- <form *ngIf="codeValid" class="form-reset-password" [formGroup]="formReset">
+      <h2>Restablece tu contraseña</h2>
 
       <div class="input">
         <i class="fa-solid fa-lock icon"></i>
         <input type="{{passtype}}" id="password" placeholder=" " formControlName="password">
-        <label for="password">New password</label>
+        <label for="password">Nueva contraseña</label>
         <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
       </div>
 
       <div class="input">
         <i class="fa-solid fa-lock icon"></i>
         <input type="{{passtype}}" id="repassword" placeholder=" " formControlName="repassword">
-        <label for="repassword">Repeat password</label>
+        <label for="repassword">Repetir contraseña</label>
         <i class="{{eye}}" id="eye" (click)="showPassword()"></i>
       </div>
       <div *ngIf="formReset.get('password')?.touched && formReset.get('repassword')?.touched" class="error">
         <p  *ngIf="passControl.errors?.['required'] || repassControl.errors?.['required']">
           <i class="fa-solid fa-circle-info"></i>
-          Passwords do not match.
+          Debes rellenar todos los campos.
         </p>
       </div>
 
       <div class="cont-button">
         <button (click)="changePassword()">
-          Change my password
+          Cambiar mi contraseña
         </button>
 
       </div>
-    </form>
+    </form> -->
 
   </main>
 </section>
