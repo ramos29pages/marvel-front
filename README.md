@@ -10,9 +10,9 @@ Este proyecto Angular es una aplicación web de una sola página (SPA) que imple
 ## 📋 Tabla de Contenidos
 
 1. [Estructura del Proyecto](#estructura-del-proyecto)
-2. [Instalación y Ejecución](#instalación-y-ejecución)
-6. [Vista Previa](#vista-previa)
-7. [Contacto](#contacto)
+2. [Instalación y Ejecución](#️-instalación-y-ejecución)
+6. [Vista Previa](#-vista-previa)
+7. [Contacto](#-contacto)
 
 ## 📒Estructura del proyecto
 
@@ -52,7 +52,7 @@ npm install -g @angular/cli
 Clone este repositorio en tu máquina local:
 
 ```Bash
-git clone LINK_COPIADO_DEL_REPOSITORIO
+git clone https://github.com/ramos29pages/marvel-front.git
 ```
 
 ### Instalar Dependencias
